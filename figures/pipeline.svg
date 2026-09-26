@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 0 740 600" font-family="Georgia, serif" font-size="13" text-anchor="middle">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#111"/>
+    </marker>
+  </defs>
+  <style>
+    rect { fill: #fff; stroke: #111; stroke-width: 1.2; }
+    .input { fill: #dbe8f7; stroke: #2f5f98; }
+    .prior { fill: #fdebd3; stroke: #b86e12; stroke-dasharray: 5 3; }
+    .group { fill: #fff8ee; stroke: #d9a860; }
+    .ours { fill: #d9f0dc; stroke: #2e7d3a; stroke-width: 2.5; }
+    .small { font-size: 11px; fill: #555; }
+    .bold { font-weight: bold; }
+    line, path.edge { stroke: #111; stroke-width: 1.2; fill: none; }
+    .arr { marker-end: url(#arrow); }
+  </style>
+
+  <!-- Inputs -->
+  <rect class="input" x="40" y="20" width="200" height="50" rx="4"/>
+  <text x="140" y="50" class="bold">Paper</text>
+  <rect class="input" x="420" y="20" width="200" height="50" rx="4"/>
+  <text x="520" y="50" class="bold">Code repository</text>
+
+  <!-- Prior work: hypothesis extraction -->
+  <rect class="prior" x="20" y="130" width="240" height="66" rx="4"/>
+  <text x="140" y="155">Hypothesis extraction</text>
+  <text x="140" y="175" class="small">Snelleman et al. (2026)</text>
+
+  <!-- Prior work: alternative R2 → R4 systems from the lit review (any one is used) -->
+  <rect class="group" x="285" y="112" width="420" height="170" rx="6"/>
+  <text x="495" y="129" class="small">R2 → R4 system: one of</text>
+  <rect class="prior" x="295" y="138" width="150" height="62" rx="4"/>
+  <text x="370" y="163">Shah et al. (2026)</text>
+  <text x="370" y="182" class="small">LLM code repair</text>
+  <text x="465" y="174" class="bold">or</text>
+  <rect class="prior" x="485" y="138" width="150" height="62" rx="4"/>
+  <text x="560" y="163">CORE-Agent</text>
+  <text x="560" y="182" class="small">Siegel et al. (2024)</text>
+  <text x="662" y="174" class="bold">or</text>
+  <rect class="prior" x="295" y="210" width="150" height="62" rx="4"/>
+  <text x="370" y="235">ResearchCodeAgent</text>
+  <text x="370" y="254" class="small">Gandhi et al. (2025)</text>
+  <text x="465" y="246" class="bold">or</text>
+  <rect class="prior" x="485" y="210" width="150" height="62" rx="4"/>
+  <text x="560" y="235">Jailbreak Foundry</text>
+  <text x="560" y="254" class="small">Fang et al. (2026)</text>
+  <text x="670" y="246" class="bold">or …</text>
+
+  <!-- Intermediate artefacts -->
+  <rect x="20" y="320" width="240" height="56" rx="4"/>
+  <text x="140" y="344">Structured hypotheses,</text>
+  <text x="140" y="362">experiments, interpretations</text>
+
+  <rect x="375" y="320" width="240" height="56" rx="4"/>
+  <text x="495" y="353">Code output</text>
+
+  <!-- This thesis -->
+  <rect class="ours" x="240" y="430" width="240" height="56" rx="4"/>
+  <text x="360" y="454" class="bold">IR4 system</text>
+  <text x="360" y="472" class="small">this thesis</text>
+
+  <rect x="240" y="536" width="240" height="44" rx="4"/>
+  <text x="360" y="563">Reproducibility assessment</text>
+
+  <!-- Edges: paper → extraction -->
+  <line class="arr" x1="140" y1="70" x2="140" y2="128"/>
+  <!-- Edges: paper + code → R2 → R4 system -->
+  <path class="edge" d="M240,45 H280 V92"/>
+  <line x1="520" y1="70" x2="520" y2="92"/>
+  <line x1="280" y1="92" x2="520" y2="92"/>
+  <path class="edge arr" d="M495,92 V110"/>
+  <!-- Edges: paper and code → IR4 (side rails) -->
+  <path class="edge arr" d="M40,35 H0 V466 H238"/>
+  <path class="edge arr" d="M620,35 H720 V466 H482"/>
+  <!-- Edges: producers → artefacts -->
+  <line class="arr" x1="140" y1="196" x2="140" y2="318"/>
+  <line class="arr" x1="495" y1="282" x2="495" y2="318"/>
+  <!-- Edges: artefacts → IR4 -->
+  <path class="edge arr" d="M140,376 C140,405 250,405 280,428"/>
+  <path class="edge arr" d="M495,376 C495,405 460,405 440,428"/>
+  <line class="arr" x1="360" y1="486" x2="360" y2="534"/>
+
+  <!-- Legend -->
+  <g font-size="11" text-anchor="start">
+    <rect class="input" x="560" y="520" width="18" height="12"/><text x="584" y="530">Input</text>
+    <rect class="prior" x="560" y="540" width="18" height="12"/><text x="584" y="550">Prior work</text>
+    <rect class="ours" x="560" y="560" width="18" height="12"/><text x="584" y="570">This thesis</text>
+  </g>
+</svg>
