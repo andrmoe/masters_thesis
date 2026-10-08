@@ -1,0 +1,16 @@
+{
+  "format": 1,
+  "id": "20261008T121606Z",
+  "paper": {
+    "title": "msf-CNN: Patch-based Multi-Stage Fusion with Convolutional Neural Networks for TinyML",
+    "arxiv": "2505.11483"
+  },
+  "repository": {
+    "url": "https://github.com/TinyPART/msf-CNN",
+    "commit": "fd74a7c8f5d8c33c534904c6bd754805e026d36a"
+  },
+  "repair_branch": "reproenv_repair",
+  "image": {"tag": "reproenv/msf-cnn:20261008T121606Z", "id": "sha256:97b5d0c75ef74b7c039bf55e61a3972a4c7d0b87d390d38e96466cdbe19e223f"},
+  "command": ["python", "analysis_optimization.py", "-m", "MBV2-w0.35", "-p", "P1", "-c1", "inf"],
+  "target": {"metric": "Peak RAM usage (MBV2-w0.35, P1, F=Inf)", "value": "8.56 kB", "source": "RECLAIM eval split, 2505.11483"}
+}

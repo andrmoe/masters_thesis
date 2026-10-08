@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reproenv"
+version = "0.1.0"
+description = "Inspect AI-generated reproductions of computational research papers"
+requires-python = ">=3.10"
+license = "MIT"
+
+[project.scripts]
+reproenv = "reproenv:main"
+
+[tool.setuptools]
+py-modules = ["reproenv"]
