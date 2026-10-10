@@ -21,3 +21,9 @@ A reproduction consists of:
 1. a git repository with repairs in a branch called reproenv_repair
 1. a results folder
 1. a repair log
+
+Thesis:
+
+The thesis is `autoreproduce.html`. `refs.js` renders the reference list from `references.bib`, so the page must be served over HTTP to show references: run `python -m http.server` and open http://localhost:8000/autoreproduce.html.
+
+To add a reference, append its BibTeX to `references.bib` (arXiv: `curl https://arxiv.org/bibtex/<id>`, DOI: `curl -LH "Accept: application/x-bibtex" https://doi.org/<doi>`), give it a short key, and cite it with `<a href="#key"></a>`.
