@@ -6,7 +6,8 @@
  *   <figure>            auto-numbered "Figure N" in its <figcaption>
  *   <figure class="table"> auto-numbered "Table N" (put a <table> inside)
  *   math                write MathML (<math>…</math>), rendered natively
- *   citations           <a href="#moe2026">Moe 2026</a>, list entries in #references
+ *   citations           <a href="#moe2026"></a> with moe2026 a key in references.bib;
+ *                       refs.js fills in the text and the #references list
  *   <section class="page-break">  starts on a new page
  */
 
@@ -70,5 +71,6 @@ th, td { padding: .3em .8em; text-align: left; }
 #references ol { padding-left: 1.5em; font-size: .92em; }
 #references li { margin-bottom: .4em; }
 #references li:target { background: #fff3b0; }
+.cite-missing { color: #c00; }
 
 .page-break { break-before: page; }
