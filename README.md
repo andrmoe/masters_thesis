@@ -8,19 +8,47 @@ Usage:
 
 1. Inside a git repository, run "reproenv". Reproenv will run find the newest available reproduction, and visualize the steps taken to repair and run the code.
 1. Run "reproresult" to fetch a folder with the raw program outputs from the reproduction
-1. Run "reprorun" to run the docker container and rerun the reproduction.
+1. Run `reprorun /path/to/artifact --source /path/to/source-repository` to execute a prepared reproduction in Docker. Use a new artifact directory for each execution.
 
 Format:
 
-A reproduction consists of:
+> **AI-written:** The format description and diagram below were written by Codex
+> at the author's request. This marked section ends before “Thesis”.
 
-1. a Dockerfile
-1. a Docker image
-1. a reference to a git commit in a repository
-1. a diff with that commit for the repaired code
-1. a git repository with repairs in a branch called reproenv_repair
-1. a results folder
-1. a repair log
+The [artifact format](FORMAT.md) uses `study.json` unchanged from
+[Snelleman's automated-reproducibility](https://github.com/thijssnelleman/automated-reproducibility).
+Each reproduction runs its experiments sequentially in one container.
+A `reproduction.json` records the source revision, image, entry command, ordered
+study experiment IDs, container exit code and output paths. Environment and repair files explain how the code was
+made executable. Results are observations; agreement with the paper is not required.
+
+```text
+study.json
+Dockerfile
+reproduction.json
+repair.diff
+repair_log.jsonl
+results/
+```
+
+The diagram names the responsible agent or software, its task, and its outputs.
+Any code repair agent can perform the repair stage; the format does not prescribe
+its internal workflow. The `reprorun` execution runner builds the repaired source
+and records one container execution. A later reproduction gets a new directory.
+See [execution instructions](FORMAT.md#executing-a-plan) for Docker requirements,
+plan preparation, input mounts, and tests.
+
+![AI-written workflow diagram: processes, separate artifact boxes, and labeled dependency types](figures/reproduction-flow.svg?v=4)
+
+Read the stages from left to right. Dashed arrows show files being written; solid
+arrows show inputs being read. The legend uses the same colors and shapes as the
+diagram. Code repair remains a single stage with no prescribed internal workflow.
+
+
+> **AI-written:** The campaign viewer and the linked selection rationale were written by Codex.
+
+The [paper repair observatory](reproductions/) presents a [diverse 16-paper queue](reproductions/PAPERS.md) and parses the resulting reproduction artifacts. It is a buildless static app for GitHub Pages; see [hosting and export instructions](reproductions/README.md).
+
 
 Thesis:
 

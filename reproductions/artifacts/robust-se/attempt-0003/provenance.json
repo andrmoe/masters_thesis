@@ -1,0 +1,60 @@
+{
+  "dataset": "doi:10.7910/DVN/26935",
+  "note": "AI-written: local Git snapshot of unmodified original accessible downloads; restricted MilnerButhe2 file excluded.",
+  "files": [
+    {
+      "filename": "bootstrapIM.nb.R",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2491880?format=original",
+      "sha256": "e7b20129b92ea0233c1bb3d8242e3d82893a7447e307422045be7d2911f3c9fe",
+      "bytes": 3851
+    },
+    {
+      "filename": "bootstrapIM.normal.R",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2491884?format=original",
+      "sha256": "6e8d2b53e02b43bbcad255224c7e67a4b622f6613e115a714238d4bd9ec83e4f",
+      "bytes": 4205
+    },
+    {
+      "filename": "bootstrapIM.poisson.R",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2491878?format=original",
+      "sha256": "e49b62eb26f375cec73e1f2d76ce0dda1ac8ca0043cd62ca170375cb53070f21",
+      "bytes": 2712
+    },
+    {
+      "filename": "ButheMilner.R",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2491885?format=original",
+      "sha256": "e81f7cdd1486a199a3860a07cc7697d4ad3f8edf1f50b5bc1f63c36acc448458",
+      "bytes": 10841
+    },
+    {
+      "filename": "DreherandJensenJLEreplication.dta",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2491888?format=original",
+      "sha256": "82303c7b3cc6bc9ca32f28ddba84ac38d98d7e5ac499702233d551305fe272f8",
+      "bytes": 344593
+    },
+    {
+      "filename": "DreherJensen.R",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2491883?format=original",
+      "sha256": "44bbcd38f2d26e2780d6a71373ff2cfd4a4f646151b5cbdc0ab295c141f3eb6c",
+      "bytes": 7394
+    },
+    {
+      "filename": "Neumayer_ISQ_2003.R",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2491881?format=original",
+      "sha256": "e46fa0885e808840ef9cc89a49cc0d199eee13261e7ab3735a0b6afedd76a59b",
+      "bytes": 8330
+    },
+    {
+      "filename": "ReadMe.txt",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2491882?format=original",
+      "sha256": "d4edb7b8261a7d9bfd6978ca38ec52a226f61d75228bb24f6c3d1d8f2ce583fa",
+      "bytes": 632
+    },
+    {
+      "filename": "vcovSACCchange.R",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2732877?format=original",
+      "sha256": "5ac087fc4d21cbc3679ec5787b7ae4d64beccb42afcc3ff545a1bab0b7825243",
+      "bytes": 6035
+    }
+  ]
+}

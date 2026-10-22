@@ -6,7 +6,7 @@ from pathlib import Path
 
 
 def is_reproduction(path):
-    return (path / "manifest.json").is_file()
+    return (path / "reproduction.json").is_file() or (path / "manifest.json").is_file()
 
 
 def find_newest(start):
@@ -26,6 +26,13 @@ def read(path):
     return path.read_text() if path.is_file() else ""
 
 
+def read_companion(reproduction, name):
+    path = (reproduction / name).resolve()
+    if Path(name).is_absolute() or not path.is_relative_to(reproduction.resolve()):
+        raise ValueError(f"Artifact path must stay inside reproduction: {name}")
+    return json.loads(path.read_text())
+
+
 def main():
     start = Path(sys.argv[1] if len(sys.argv) > 1 else ".").resolve()
     reproduction = find_newest(start)
@@ -33,12 +40,22 @@ def main():
         print(f"reproenv: no reproductions found from {start}", file=sys.stderr)
         return 1
 
-    manifest = json.loads(read(reproduction / "manifest.json"))
-    repository = manifest.get("repository", {})
+    current = (reproduction / "reproduction.json").is_file()
+    record = read_companion(reproduction, "reproduction.json" if current else "manifest.json")
+    if current and record["format"] != 3:
+        raise ValueError(f"Unsupported reproduction format: {record['format']}")
+    repository = record.get("repository", {})
 
     print(f"Reproduction {reproduction.name} of {repository.get('url')} at commit {repository.get('commit')}")
     print_section("Repair", read(reproduction / "repair.diff") or "No changes to the code.")
     print_section("Environment", read(reproduction / "Dockerfile") or "No Dockerfile.")
+    if current:
+        status = "not executed" if record["exit_code"] is None else f"exit code {record['exit_code']}"
+        print_section("Execution", f"One container: {status}\n"
+                      + "Experiment order: " + ", ".join(record["experiments"]))
+        print_section("Assessments", "\n".join(
+            f"{item['analysis']}: {item['path']}"
+            for item in record["assessments"]) or "No assessments.")
     return 0
 
 

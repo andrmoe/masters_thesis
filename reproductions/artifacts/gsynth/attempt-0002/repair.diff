@@ -1,0 +1,44 @@
+diff --git a/reproduce.R b/reproduce.R
+new file mode 100644
+index 0000000..63f3fa3
+--- /dev/null
++++ b/reproduce.R
+@@ -0,0 +1,38 @@
++# AI-written harness around original Table 2 code, unchanged model arguments.
++options(warn=1)
++library(gsynth)
++data(gsynth)
++setwd(Sys.getenv("REPRO_RESULTS", "/results"))
++save_model <- function(x, name) {saveRDS(x,paste0(name,".rds"));if(!is.null(x$est.table)) write.csv(x$est.table,paste0(name,".csv"));if(!is.null(x$est.avg)) write.csv(x$est.avg,paste0(name,"-att.csv"));cat("SAVED",name,"\n")}
++cat("Original Table 2: four sequential models, seed 2139, 2000 bootstraps each\n")
++
++out.did1<-interFE(turnout ~ policy_edr,
++                  data = turnout, index = c("abb", "year"),
++                  r = 0, force="two-way", SE = TRUE, nboots = 2000,
++                  seed = 2139)
++
++save_model(out.did1,"table2-column1")
++## Column 2 (DID)
++out.did2<-interFE(turnout ~ policy_edr + policy_mail_in + policy_motor,
++                  data = turnout, index = c("abb", "year"),
++                  r = 0, force="two-way", SE = TRUE, nboots = 2000,
++                  seed = 2139)
++
++save_model(out.did2,"table2-column2")
++## Column 3 (GSC)
++out.syn1<-gsynth(turnout ~ policy_edr,
++                 data = turnout, index =c("abb", "year"),
++                 force = "two-way", CV = TRUE, r=c(0,5), se = TRUE,
++                 parallel = FALSE, nboots=2000, seed = 2139)
++
++save_model(out.syn1,"table2-column3")
++## Column 4 (GSC)
++out.syn2<-gsynth(turnout ~ policy_edr + policy_mail_in + policy_motor,
++                 data = turnout, index =c("abb", "year"),
++                 force = "two-way", CV = TRUE, r=c(0,5), se = TRUE,
++                 parallel = FALSE, nboots=2000, seed = 2139)
++
++
++
++save_model(out.syn2,"table2-column4")
++writeLines(capture.output(sessionInfo()),"session-info.txt")

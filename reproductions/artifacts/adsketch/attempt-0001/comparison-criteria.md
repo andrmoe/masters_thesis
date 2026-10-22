@@ -1,0 +1,3 @@
+# AI-written: comparison criteria declared before inspecting outputs
+
+Execution criterion: the original Yahoo demo completes all 67 supplied A1 real-data series and emits its macro-average precision, recall and F1. Preserve per-series logs, figures and learned patterns. No numerical agreement threshold is declared because this scoped attempt does not extract the paper's corresponding quantitative table. Report metrics as observations, never use them to tune parameters or decide which outputs to retain. Timeout, exception, or incomplete series coverage is incomplete execution, even if some plots exist. No claims about online adaptation, industry, AIOps18, comparative baselines, or full paper reproduction.

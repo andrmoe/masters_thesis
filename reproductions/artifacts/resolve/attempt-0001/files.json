@@ -1,0 +1,57 @@
+[
+  {
+    "path": "Dockerfile",
+    "bytes": 843,
+    "sha256": "6c0479e8b8814bcbe85c2ec99162c9f15661cec3eba768ceec41a78e38b4f5ef"
+  },
+  {
+    "path": "README.md",
+    "bytes": 1939,
+    "sha256": "b4ec87d722bb854436edf56fe592d075953168438796aa23674c663b7fcb62e9"
+  },
+  {
+    "path": "provenance.json",
+    "bytes": 3492,
+    "sha256": "3219fc52fa0f811955be1016d458250102bf29f432849b13c8dbf188da80db82"
+  },
+  {
+    "path": "repair.diff",
+    "bytes": 2490,
+    "sha256": "279f6d4ba47c926a491050b44bdb99f20892a597525f198422473b046dbb912f"
+  },
+  {
+    "path": "repair_log.jsonl",
+    "bytes": 2720,
+    "sha256": "8a12dac7cbc9e1569a43d882356c143e32e68aa9fc80991c122503bd16d13d34"
+  },
+  {
+    "path": "reproduction.json",
+    "bytes": 1355,
+    "sha256": "62b2df07af233b62201c1fa0cfb15cdc40dfca9d8cb576b1bb11be5712096b10"
+  },
+  {
+    "path": "results/assessment.md",
+    "bytes": 322,
+    "sha256": "d0c0cb4119e5a858f94530d12995e4337f6ca43f924afde374fd6b504353dba4"
+  },
+  {
+    "path": "results/stderr.txt",
+    "bytes": 262,
+    "sha256": "8d2de2f034e782aa77393197f9fe1bfca396edffaa0f412947042f47848aaa2d"
+  },
+  {
+    "path": "results/stdout.txt",
+    "bytes": 85,
+    "sha256": "70f23ece65aaafda3c3098b0fc14a95942250480a8c0bd1deccbe02a59189060"
+  },
+  {
+    "path": "source.bundle",
+    "bytes": 375928,
+    "sha256": "9b68c35624916153e1390e79485c56c64c71a4d53f4b0d00225ca4e0fcd56dc1"
+  },
+  {
+    "path": "study.json",
+    "bytes": 3519,
+    "sha256": "5ddbd64c065cdc7a50e2c86c9a89f41b5aa7ebfd8ff12aded540c64d8844cbf7"
+  }
+]

@@ -1,0 +1,44 @@
+diff --git a/BJPS Replication 2.R b/BJPS Replication 2.R
+index 2e12766..147235f 100644
+--- a/BJPS Replication 2.R	
++++ b/BJPS Replication 2.R	
+@@ -17,7 +17,8 @@ nrow(dat3) #16180 country profiles
+ 
+ #Do parallel processing - speeds things up
+ library(snow)
+-cl <- makeCluster(8,"SOCK")
++cl <- makeCluster(1,"SOCK")
++parallel::clusterSetRNGStream(cl, iseed=43215) # AI-written: seed the actual worker reproducibly
+ set.seed(43215)
+ 
+ clusterBootS2 <- function(data){
+diff --git a/reproduce.R b/reproduce.R
+new file mode 100644
+index 0000000..9d38fd2
+--- /dev/null
++++ b/reproduce.R
+@@ -0,0 +1,24 @@
++# AI-written execution harness; only main unweighted published model is scheduled.
++options(warn=1)
++out <- Sys.getenv("REPRO_RESULTS", "/results")
++lines <- readLines("BJPS Replication 2.R")
++stop_line <- which(grepl("^#Now: weighted analysis", lines))[1] - 1L
++stopifnot(length(stop_line)==1L, !is.na(stop_line))
++cat("experiment_1 START: all supplied non-US profiles, original 1500 bootstrap replicates\n")
++eval(parse(text=lines[seq_len(stop_line)]), envir=.GlobalEnv)
++stopCluster(cl)
++stopifnot(nrow(dat3)==16180L, ncol(boot.full2)==1500L, all(is.finite(boot.full2)))
++colnames(plot.mat2) <- c("mean", "q025", "q05", "q95", "q975")
++write.csv(plot.mat2, file.path(out,"main-amce.csv"), row.names=TRUE)
++write.csv(boot.full2, file.path(out,"bootstrap-coefficients.csv"),row.names=TRUE)
++point_model <- lm(Chosen ~ Capabilities + Stakes + RegimeType + actor + NewLeader + milService + maleLeader + prevRole + prevOpponent + prevActLdr + curBehavior, data=dat3)
++write.csv(data.frame(term=names(coef(point_model)), estimate=unname(coef(point_model))),file.path(out,"ols-coefficients.csv"),row.names=FALSE)
++writeLines(c(paste("profiles",nrow(dat3)),paste("participants",length(unique(dat3$ID_numeric))),"bootstrap_replicates 1500","workers 1","worker_seed 43215","point estimates and bootstrap means are distinct quantities"),file.path(out,"execution-summary.txt"))
++png(file.path(out,"main-amce.png"),width=1200,height=900)
++par(mar=c(5,24,3,2))
++y <- rev(seq_len(nrow(plot.mat2)))
++plot(plot.mat2[,1],y,xlim=range(plot.mat2[,c(2,5)]),yaxt="n",ylab="",xlab="Average marginal component effect",pch=16,main="Unweighted main conjoint model: 95% bootstrap intervals")
++segments(plot.mat2[,2],y,plot.mat2[,5],y);axis(2,at=y,labels=rownames(plot.mat2),las=2,cex.axis=.75);abline(v=0,lty=3)
++dev.off()
++capture.output(sessionInfo(),file=file.path(out,"session-info.txt"))
++cat("experiment_1 COMPLETE\n")

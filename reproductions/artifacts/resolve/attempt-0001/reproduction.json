@@ -1,0 +1,40 @@
+{
+  "format": 3,
+  "repository": {
+    "url": "https://doi.org/10.7910/DVN/VSVMY7",
+    "commit": "92c961b76875e19d98f2beb278ea3679e20634cc"
+  },
+  "image": "sha256:46ecae49a92c4f723ee4fd922b4e11179cb4f3c041213fd56dbb1b050f38dfb1",
+  "experiments": [
+    "experiment_1"
+  ],
+  "analyses": [],
+  "command": [
+    "Rscript",
+    "reproduce.R"
+  ],
+  "working_directory": "/work",
+  "exit_code": 1,
+  "outputs": {
+    "stdout": "results/stdout.txt",
+    "stderr": "results/stderr.txt",
+    "files": [
+      "results/assessment.md"
+    ]
+  },
+  "unattempted_experiments": [
+    {
+      "experiment": "experiment_2",
+      "reason": "AI-written: Outside this resource-bounded main-model scope; original source retained. Raw-to-weight preprocessing additionally requires the authors manual Stata entropy-balancing stage."
+    },
+    {
+      "experiment": "experiment_3",
+      "reason": "AI-written: Outside this resource-bounded main-model scope; original source retained. Raw-to-weight preprocessing additionally requires the authors manual Stata entropy-balancing stage."
+    },
+    {
+      "experiment": "experiment_4",
+      "reason": "AI-written: Outside this resource-bounded main-model scope; original source retained. Raw-to-weight preprocessing additionally requires the authors manual Stata entropy-balancing stage."
+    }
+  ],
+  "assessments": []
+}

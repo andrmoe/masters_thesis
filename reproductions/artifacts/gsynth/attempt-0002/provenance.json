@@ -1,0 +1,32 @@
+{
+  "AI-written": true,
+  "source": "https://doi.org/10.7910/DVN/8AKACJ",
+  "sha256": {
+    "sim_inter.R": "144d3a12545de38cf596f32ea1ac8bd6950177b454cd7b02e6fbf137da687401",
+    "rep_turnout.R": "4f453975efbaf685ce3e871d03abdfc84d3c70ebcc6fdaad269d116d9b6eb34d",
+    "ReadMe.txt": "407ca6e588e51e6e5964ba42aeea4140282716daf3f7ad9a2ca85639ed2aac5a",
+    "sim_adh.R": "2e35d19dc89db05d9ea38fa21af6e912a708e0140b44995b636cd5999deba746",
+    "sim_TN.R": "8f7f216c30a36b62dfb2656716e9a1d542de14d26054af5f1c77c4d5bc855091",
+    "FLSource.RData": "43a6d2cc0ecf3368a2386ee59846850b31c35bba6cf8c85122e96f92fbdc6224",
+    "sim_sampling.R": "3dd435e4afb049939916cb9ef53032d7c50a634603f517675c8b40cb18e958d9",
+    "gsynth_1.0.tar.gz": "cd80c4be4b042da36fa2976f53d167043ecd8a26b7ea6a3128f30608e77ad500",
+    "rep_simdata.R": "35026ad48a08f03e9337d1393d01562cf022b64332ea988636d6c883f59aa8d8",
+    "sim_coverage.R": "50951c27baab081ae7be6b4eeec110a2e119588cd21c391c6f41577180daa21b",
+    "sim_factor.R": "f191a3bf3d9e4a84accc3303979f4cabf57dddf82608bf19e92f8cacc128f8ec",
+    "sim_DID.R": "e0dcd41be5841353068efc2402db673c93ea6bfae34d10ce479d22cd7386c5d0",
+    "gsynth/DESCRIPTION": "f1b13325814d127a4be02bd52b220f335cbb1f15f13cfcd624c66192b979c7d6",
+    "gsynth/NAMESPACE": "5437b66b5b0441bc584343dcd32ce8650f762d197db3a24b65c7695145bb04e5",
+    "gsynth/build/partial.rdb": "30e98b240c0497024b968df4debd4783265b0685ed66903fa39fb92a9fca5498",
+    "gsynth/R/RcppExports.R": "7f69543602a23426491f71db447175269006c16a025b76e0ec30edac149008c4",
+    "gsynth/R/gsynth.R": "4d177351a598a03d17774a0643ef237afab17d341d96f7764e3a04c5a3a9a962",
+    "gsynth/R/interFE.R": "28769c4b1252ecb2fa96296c577414888bf0a034bea41300bc2b1b4cc6167fa4",
+    "gsynth/src/Makevars": "9e8913b75a4e4b5ae441c1bb2679f9c5326da77b37fe76d47dbdac9633922e94",
+    "gsynth/src/rcpparma_hello_world.cpp": "6e7d338f5a6e0931f7b3c1a467b58f82ddab10f1fd9c7d541a64648119f0fc19",
+    "gsynth/src/xtinter.cpp": "02d71ece39bc84555b799145bebb7dd7a520dd62d46cc9d61dd58c19b2f31d1b",
+    "gsynth/src/RcppExports.cpp": "a6dedede94845852e75312d4fe32a7aebc05cd9cd8d4fe1b665cbb5a1e46fc85",
+    "gsynth/src/Makevars.win": "71ee5d2616b93c82e61426ca8a59061eca5c2961419b4a55514ce03159e31afa",
+    "gsynth/data/gsynth.RData": "f6715138c0450b1226177fe0b8064875d3e15e1c2eae834cfa99539836178ab3",
+    "gsynth/man/gsynth-package.Rd": "78da5f826a37db07d842a4165e313689901820cf5126befb1036be78b72620ee",
+    "gsynth/man/rcpparma_hello_world.Rd": "4fff124e7f8b8d9eec33e2b79c237ac37145669967d765865d2332403fb6d79e"
+  }
+}

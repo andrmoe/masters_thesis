@@ -1,0 +1,17 @@
+diff --git a/reproduce.sh b/reproduce.sh
+new file mode 100644
+index 0000000..f3c57a9
+--- /dev/null
++++ b/reproduce.sh
+@@ -0,0 +1,11 @@
++#!/bin/sh
++# AI-written: compilation diagnostic only; no synthetic workload or invented algorithm.
++set -eu
++cd /work
++printf 'Compiling original author BBFS edge implementation\n'
++g++ -O3 src/bbfs_edge.cpp -o /tmp/bbfs_edge
++printf 'Compiling original author BBFS node implementation\n'
++g++ -O3 src/bbfs_node.cpp -o /tmp/bbfs_node
++printf 'Both available BBFS implementations compiled.\n'
++printf 'Missing advertised RQuBE_(node/edge).cpp and runExperiment_(node/edge).cpp. Scientific benchmark not executed.\n' >&2
++exit 66

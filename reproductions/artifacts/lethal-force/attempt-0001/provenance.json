@@ -1,0 +1,45 @@
+{
+  "notice": "AI-written provenance; checksums refer to original source snapshot.",
+  "doi": "10.7910/DVN/3RNFFH",
+  "version": "1.0",
+  "retrieved": "2026-10-21",
+  "files": [
+    {
+      "id": 3380961,
+      "filename": "Clean Expanded Categories.R",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/3380961?format=original"
+    },
+    {
+      "id": 3380958,
+      "filename": "Cleaning Variables for JOP Analysis.R",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/3380958?format=original"
+    },
+    {
+      "id": 3380960,
+      "filename": "Full Analysis Replication File.R",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/3380960?format=original"
+    },
+    {
+      "id": 3380959,
+      "filename": "PKAP_raw_data.tab",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/3380959?format=original"
+    },
+    {
+      "id": 3380962,
+      "filename": "README",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/3380962?format=original"
+    },
+    {
+      "id": 3380957,
+      "filename": "variable_names.tab",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/3380957?format=original"
+    }
+  ],
+  "sha256_original_files": {
+    "variable_names.csv": "5eee0fe0617af5aa643767c0c3f54d8076e049fc6eefbb4985eeb84c20567b4e",
+    "PKAP_raw_data.csv": "526c21ae7262b080b57b401c1f4082966482afebc5914963282b347d16d7203b",
+    "Full Analysis Replication File.R": "b6ce5935cf83802d0659eb3c44eb0b596f412297c4a260ed3bd08529e76e3b85",
+    "Cleaning Variables for JOP Analysis.R": "7f47237a9792ddd9f5eab79ed0c4ffe9507da68c8fd6bf52cd43e072fa30bed2",
+    "Clean Expanded Categories.R": "cde62b686e966f54d86f45b05f208e98178726c893f176de79483efee11777a8"
+  }
+}

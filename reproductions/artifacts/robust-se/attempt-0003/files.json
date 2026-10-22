@@ -1,0 +1,52 @@
+[
+  {
+    "path": "Dockerfile",
+    "bytes": 953,
+    "sha256": "d523a81cafafaad57f661b9b486fb609c4f170c5cbaabf10a12d4e216948b52b"
+  },
+  {
+    "path": "README.md",
+    "bytes": 302,
+    "sha256": "ff1e7f72941babcf00aa40e975bfa13e5bcfb10c5086390be79b5485a40a7235"
+  },
+  {
+    "path": "provenance.json",
+    "bytes": 2410,
+    "sha256": "f726ee68141f93a36c86d534235630e93c9bae20dd9270fb1c7220ebbc32dd64"
+  },
+  {
+    "path": "repair.diff",
+    "bytes": 736,
+    "sha256": "466feda989bc2b184b92fcffe3a4c5cea146825393b199d2e098c83bc217b7c7"
+  },
+  {
+    "path": "repair_log.jsonl",
+    "bytes": 1039,
+    "sha256": "d095d802be1e515b53c064b264efade694c3f30fd330ccfca5777cc651407f43"
+  },
+  {
+    "path": "reproduction.json",
+    "bytes": 960,
+    "sha256": "7a79a45eb71ac71deb8e33c1a40f17e4ae89c8a1e0747eb65a35b2c713ed4975"
+  },
+  {
+    "path": "results/stderr.txt",
+    "bytes": 912,
+    "sha256": "a84acbf58cedb0ce7ea4d3611176ff4a7ef4ec130397b25de70253f804264604"
+  },
+  {
+    "path": "results/stdout.txt",
+    "bytes": 7822,
+    "sha256": "c528b96334d7ddd7a030c201369a1eb6350ab493f5eef4663e9e2c6913b18595"
+  },
+  {
+    "path": "source.bundle",
+    "bytes": 70406,
+    "sha256": "881a5cf8cba45108f9663e1d412cf0e76a823bda5b700cd78a730e6ca019deed"
+  },
+  {
+    "path": "study.json",
+    "bytes": 3308,
+    "sha256": "fe25679afd79c5add1febc9083a5ecda9645e35ec0606a49e155ae02cee75286"
+  }
+]

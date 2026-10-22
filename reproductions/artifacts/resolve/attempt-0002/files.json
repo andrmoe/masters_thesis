@@ -1,0 +1,92 @@
+[
+  {
+    "path": "Dockerfile",
+    "bytes": 843,
+    "sha256": "6c0479e8b8814bcbe85c2ec99162c9f15661cec3eba768ceec41a78e38b4f5ef"
+  },
+  {
+    "path": "README.md",
+    "bytes": 1713,
+    "sha256": "0188e14dac23b7503f0c3bbf4377ff0e718d5f321ea9694cf0b195bd25b3760d"
+  },
+  {
+    "path": "provenance.json",
+    "bytes": 3492,
+    "sha256": "3219fc52fa0f811955be1016d458250102bf29f432849b13c8dbf188da80db82"
+  },
+  {
+    "path": "repair.diff",
+    "bytes": 2500,
+    "sha256": "710bee226d57d7e2bae8bd8d594f27026f8630d96ea6a6beb136bb5463b25467"
+  },
+  {
+    "path": "repair_log.jsonl",
+    "bytes": 3893,
+    "sha256": "06fc1c0d43d9236d634185a9006bfc39c7059b7cf8620a7b38a9f29dca6a6cbc"
+  },
+  {
+    "path": "reproduction.json",
+    "bytes": 1713,
+    "sha256": "5a59a08b49e65796f75d7fdb6bce23a19e08615ec29c5370076450668ef593dd"
+  },
+  {
+    "path": "results/assessment.md",
+    "bytes": 2689,
+    "sha256": "fac71c6218000843e3d0b4e721cbcf8321b7e9ba05f608c887e608a2a985dff3"
+  },
+  {
+    "path": "results/bootstrap-coefficients.csv",
+    "bytes": 499902,
+    "sha256": "065cb490203c19d679023573919328828d284f130ad3842556e072cd1a4fe033"
+  },
+  {
+    "path": "results/execution-summary.txt",
+    "bytes": 147,
+    "sha256": "19face8c33801296eaed8308a1cfdd3f965a61921f26d54502d79404d49083e1"
+  },
+  {
+    "path": "results/main-amce.csv",
+    "bytes": 1945,
+    "sha256": "97e5557b3a630c9ceb72a3927d7628e03fcea89d4124f61d20a8967bdb93bace"
+  },
+  {
+    "path": "results/main-amce.png",
+    "bytes": 19181,
+    "sha256": "e4980469e1fd92f1ab30745cae0c38389c610bc761a3506655811b1328d95be0"
+  },
+  {
+    "path": "results/ols-coefficients.csv",
+    "bytes": 727,
+    "sha256": "42e7aea33d895f3b529ff1fe73c7251fa8d4b394d48f3ef4d3cc22fbd4e55c09"
+  },
+  {
+    "path": "results/session-info.txt",
+    "bytes": 535,
+    "sha256": "d84dcd2e584c0a2c1a643e3a18fbedababdd7c1e2989f48525035aa3ca3f5d5b"
+  },
+  {
+    "path": "results/stderr.txt",
+    "bytes": 126,
+    "sha256": "130a7e427d326b655174e74e47db64503973dbd4149f5324fdfaa7731469446d"
+  },
+  {
+    "path": "results/stdout.txt",
+    "bytes": 133,
+    "sha256": "e5c018d4f24493e078bc981c5bd4786ab43f4178045f20eff1fccd17818392a0"
+  },
+  {
+    "path": "results/upstream-review.md",
+    "bytes": 15115,
+    "sha256": "998e17321f090a8c54733eb5c3defd63bf2a99b349a3215acaeb4624c761c3ae"
+  },
+  {
+    "path": "source.bundle",
+    "bytes": 375928,
+    "sha256": "9b68c35624916153e1390e79485c56c64c71a4d53f4b0d00225ca4e0fcd56dc1"
+  },
+  {
+    "path": "study.json",
+    "bytes": 3519,
+    "sha256": "5ddbd64c065cdc7a50e2c86c9a89f41b5aa7ebfd8ff12aded540c64d8844cbf7"
+  }
+]

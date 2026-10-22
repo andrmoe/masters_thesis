@@ -1,0 +1,204 @@
+{
+  "dataset": "https://doi.org/10.7910/DVN/BQMLQW",
+  "license": "CC0-1.0",
+  "files": [
+    {
+      "file": "BlamePreds.RData",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2970116?format=original",
+      "sha256": "fba651fc2f843443c08c271746aa6b91ee1b41d22ce131436b9396672a335c48",
+      "bytes": 3430993
+    },
+    {
+      "file": "HetExperimentPreds.RData",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2970119?format=original",
+      "sha256": "599c7101ebbcd9a27408ad36fdc156e14f2cdb78b3f7c69d1269c85bdc806bd2",
+      "bytes": 81369
+    },
+    {
+      "file": "Het_Experiment.RData",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2970125?format=original",
+      "sha256": "dcd5b1b186bd8892d4a162da04f1eab2a90843d47aac1c18f1b4a2d2fbcef681",
+      "bytes": 96499
+    },
+    {
+      "file": "JackmanEstimates.csv",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2970120?format=original",
+      "sha256": "6c14e5587d6579fc4f7a6a446746c4cc215079bbcc4cf544c8a72cb2bc98b3fd",
+      "bytes": 56749
+    },
+    {
+      "file": "monte_continuous_dense.R",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/3006988?format=original",
+      "sha256": "058b4f8520fadc7bc2fd213a2af8bcbd0f95e4e45a6e4ed5b747985d57b1b1c3",
+      "bytes": 4542
+    },
+    {
+      "file": "monte_continuous_sparse.R",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/3006989?format=original",
+      "sha256": "48ed55d1a0f15b17522c4ce4cf42996e23d1c57c1aa5dbc8c01a4a00fbe078fe",
+      "bytes": 4208
+    },
+    {
+      "file": "monte_discrete_dense.R",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/3006990?format=original",
+      "sha256": "4a4cb7832ed96328e4299a256dc5091bd7c51339080856fa2dbe73418ed0709c",
+      "bytes": 4975
+    },
+    {
+      "file": "monte_discrete_sparse.R",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/3006991?format=original",
+      "sha256": "b9a91781c5ebded28caedbe0f484114ed19dbf7e2c3554bd293a94e3d0516a3d",
+      "bytes": 3636
+    },
+    {
+      "file": "Public_v_Private_and_Taunting_2.csv",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2970100?format=original",
+      "sha256": "706654e760f5b3044e730c720cadf85d8b9ca7d865e5013452bd06f09d6d9ad1",
+      "bytes": 1915827
+    },
+    {
+      "file": "ReadMe.docx",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/3006986?format=original",
+      "sha256": "48b454c40d093e54f40dc0a7629e70a07c69dfec688738c71727639ae0e370c2",
+      "bytes": 52982
+    },
+    {
+      "file": "RepCode-1.R",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/3006987?format=original",
+      "sha256": "025fc0b96b2addca74f766f72d84d8b9cbb915b31472586a4f846f1b0b1d55cd",
+      "bytes": 33643
+    },
+    {
+      "file": "RepCode.R",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2970101?format=original",
+      "sha256": "36fc7c1be6956ee0fb3388da9900881be218f85448048b18c7befe7675d03c3c",
+      "bytes": 32933
+    },
+    {
+      "file": "SLF_round2.R",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2970110?format=original",
+      "sha256": "a309fa204fbc9b230f14b2293cfa843c90a3df5baf53730276e8a0d3d22e44f0",
+      "bytes": 12444
+    },
+    {
+      "file": "test_ucd_1.RData",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2970122?format=original",
+      "sha256": "18b2b802aa9b7fca4717472bffd18df38a5fe169a84c1c0ff766668d660b2d3e",
+      "bytes": 92602
+    },
+    {
+      "file": "test_ucd_2.RData",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2970121?format=original",
+      "sha256": "af1909bfe41678c4f851df0769279165b3839943d34ab7176233a53a4ca5fc0a",
+      "bytes": 92653
+    },
+    {
+      "file": "test_ucd_3.RData",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2970109?format=original",
+      "sha256": "1dc31db0593aca5836231dcd3e4da715c12d71129146c9b3e700834b8e4314b6",
+      "bytes": 92523
+    },
+    {
+      "file": "test_ucd_4.RData",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2970114?format=original",
+      "sha256": "4a8979e39ca4c3f67f9a848ff84aa9b88ca867e9038c969db29a0d6cb327e759",
+      "bytes": 92598
+    },
+    {
+      "file": "test_ucd_5.RData",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2970104?format=original",
+      "sha256": "5ba0543c142b4902d7b744a4ce026621ea15bfee35a882c0d6e3caf7467e242d",
+      "bytes": 92548
+    },
+    {
+      "file": "test_ucs_1.RData",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2970117?format=original",
+      "sha256": "56e7bab555f373e9d714a68c218525a06701f55d527535c169cae4db3f96f156",
+      "bytes": 92647
+    },
+    {
+      "file": "test_ucs_2.RData",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2970111?format=original",
+      "sha256": "2a89b4180313feb0ad74841d475ff8502f9ef5a5955050a3e22c10e1a94bcfaa",
+      "bytes": 92624
+    },
+    {
+      "file": "test_ucs_3.RData",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2970126?format=original",
+      "sha256": "1b3b3444ff5b9bca705c266d2b44f3d4b4f60a75db9c4e09159ec984690bb6be",
+      "bytes": 92566
+    },
+    {
+      "file": "test_ucs_4.RData",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2970105?format=original",
+      "sha256": "2c77f014f61089a2703043b935e76aeaa4e52ed62cd5f6a3bf77979768a138fb",
+      "bytes": 92725
+    },
+    {
+      "file": "test_ucs_5.RData",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2970124?format=original",
+      "sha256": "2daccf3e5d852d85b650d22c8e5fc47a0ff751511b10b1ccbc39c82534d479dd",
+      "bytes": 92548
+    },
+    {
+      "file": "test_udd_1.RData",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2970118?format=original",
+      "sha256": "b6b97d32402775801e080a2b24b60ec94feb324ce659db09e1580dbb41e41cbf",
+      "bytes": 16523
+    },
+    {
+      "file": "test_udd_2.RData",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2970103?format=original",
+      "sha256": "5e2acf67d34f7cef40be4f4eb226f8e51b12a789596e74e613e26fb615e6637f",
+      "bytes": 16632
+    },
+    {
+      "file": "test_udd_3.RData",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2970102?format=original",
+      "sha256": "98c16eb87bcff36d868eebe38913db757b99bb82114b125aa8afc183d2a4c1bf",
+      "bytes": 16661
+    },
+    {
+      "file": "test_udd_4.RData",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2970107?format=original",
+      "sha256": "dd097c0c5e08da71962631d1fe6d164c3c6212813be6bbf9dc98ee0fe6f43401",
+      "bytes": 16581
+    },
+    {
+      "file": "test_udd_5.RData",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2970113?format=original",
+      "sha256": "05f8df66875269105c348678465c6000f0ae5c530bdd1ef22d9a8685d10ef43b",
+      "bytes": 16633
+    },
+    {
+      "file": "test_uds_1.RData",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2970123?format=original",
+      "sha256": "c60e88b6160e321e921eff357c44d842661740f81c5f031add8f57bbbf6c23fb",
+      "bytes": 16523
+    },
+    {
+      "file": "test_uds_2.RData",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2970108?format=original",
+      "sha256": "b8deedd1b886c5ceb08255b7906baf27831315e22dcf1283831fbcda0a725fd2",
+      "bytes": 16587
+    },
+    {
+      "file": "test_uds_3.RData",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2970112?format=original",
+      "sha256": "b37f089ccbd442fbc04c5a137e1ff17a09db8627e0e875162b28d17f9f8f92e0",
+      "bytes": 16489
+    },
+    {
+      "file": "test_uds_4.RData",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2970115?format=original",
+      "sha256": "0995856ae0a57de7f0e4cb59608bc08ecf11e45a09d072bb469b9e017d4a41ac",
+      "bytes": 16497
+    },
+    {
+      "file": "test_uds_5.RData",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/2970106?format=original",
+      "sha256": "169bc13e26b90708a8b73e4adcc811e81d5b3c8ebf79b93079659b78fad971eb",
+      "bytes": 16598
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "format": 3,
+  "repository": {
+    "url": "https://doi.org/10.7910/DVN/VSVMY7",
+    "commit": "92c961b76875e19d98f2beb278ea3679e20634cc"
+  },
+  "image": "sha256:3ded15f4bde11aa59db470498ae8f9929adbc460fa79a6e3607384984ac232fb",
+  "experiments": [
+    "experiment_1"
+  ],
+  "analyses": [
+    "analysis_1"
+  ],
+  "command": [
+    "Rscript",
+    "reproduce.R"
+  ],
+  "working_directory": "/work",
+  "exit_code": 0,
+  "outputs": {
+    "stdout": "results/stdout.txt",
+    "stderr": "results/stderr.txt",
+    "files": [
+      "results/assessment.md",
+      "results/bootstrap-coefficients.csv",
+      "results/execution-summary.txt",
+      "results/main-amce.csv",
+      "results/main-amce.png",
+      "results/ols-coefficients.csv",
+      "results/session-info.txt",
+      "results/upstream-review.md"
+    ]
+  },
+  "unattempted_experiments": [
+    {
+      "experiment": "experiment_2",
+      "reason": "AI-written: Outside this resource-bounded main-model scope; original source retained. Raw-to-weight preprocessing additionally requires the authors manual Stata entropy-balancing stage."
+    },
+    {
+      "experiment": "experiment_3",
+      "reason": "AI-written: Outside this resource-bounded main-model scope; original source retained. Raw-to-weight preprocessing additionally requires the authors manual Stata entropy-balancing stage."
+    },
+    {
+      "experiment": "experiment_4",
+      "reason": "AI-written: Outside this resource-bounded main-model scope; original source retained. Raw-to-weight preprocessing additionally requires the authors manual Stata entropy-balancing stage."
+    }
+  ],
+  "assessments": [
+    {
+      "analysis": "analysis_1",
+      "path": "results/assessment.md"
+    }
+  ]
+}

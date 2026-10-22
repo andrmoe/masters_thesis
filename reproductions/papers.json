@@ -1,0 +1,188 @@
+{
+  "ai_written": true,
+  "description": "Seven investigated papers with submitted reproduction artifacts. Difficulty is an initial estimate, not a measured ranking. Original artifacts only; injected faults excluded. Execution success is separate from scientific agreement.",
+  "resources": {
+    "cpus": 1,
+    "memory_gib": 1.9,
+    "gpu": false,
+    "policy": "One repair agent and one experiment container at a time. Scoped original workloads; report incomplete coverage."
+  },
+  "papers": [
+    {
+      "rank": 1,
+      "id": "ensemble",
+      "title": "Estimating Heterogeneous Treatment Effects and the Effects of Heterogeneous Treatments with Ensemble Methods",
+      "year": 2017,
+      "dataset": "Trisovic",
+      "dataset_url": "https://github.com/atrisovic/dataverse-r-study",
+      "source_url": "https://doi.org/10.7910/DVN/BQMLQW",
+      "domain": "Causal inference",
+      "languages": [
+        "R",
+        "Java"
+      ],
+      "difficulty": "Hard",
+      "reason": "Archived R learners, native libraries and Java dependencies; an observed model-frame type failure.",
+      "scope": "One supplied empirical application; exclude the full simulation grid.",
+      "attempts": [
+        {
+          "id": "attempt-0001",
+          "path": "artifacts/ensemble/attempt-0001/"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "id": "lethal-force",
+      "title": "Lethal Force in Black and White: Assessing Racial Disparities in the Circumstances of Police Killings",
+      "year": 2019,
+      "dataset": "Trisovic",
+      "dataset_url": "https://github.com/atrisovic/dataverse-r-study",
+      "source_url": "https://doi.org/10.7910/DVN/3RNFFH",
+      "domain": "Social science",
+      "languages": [
+        "R"
+      ],
+      "difficulty": "Hard",
+      "reason": "Fragile category merges and positional column repairs precede several statistical learners.",
+      "scope": "Original cleaning and a declared analysis on the 700-row supplied dataset.",
+      "attempts": [
+        {
+          "id": "attempt-0001",
+          "path": "artifacts/lethal-force/attempt-0001/"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "id": "resolve",
+      "title": "How Do Observers Assess Resolve?",
+      "year": 2021,
+      "dataset": "Trisovic",
+      "dataset_url": "https://github.com/atrisovic/dataverse-r-study",
+      "source_url": "https://doi.org/10.7910/DVN/VSVMY7",
+      "domain": "Political psychology",
+      "languages": [
+        "R"
+      ],
+      "difficulty": "Hard",
+      "reason": "Multi-stage R/Stata workflow, supplied-data handoff, factor handling and fixed eight-worker parallelism.",
+      "scope": "One supplied conjoint-analysis path; one worker, no new survey collection.",
+      "attempts": [
+        {
+          "id": "attempt-0001",
+          "path": "artifacts/resolve/attempt-0001/"
+        },
+        {
+          "id": "attempt-0002",
+          "path": "artifacts/resolve/attempt-0002/"
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "id": "gsynth",
+      "title": "Generalized Synthetic Control Method: Causal Inference with Interactive Fixed Effects Models",
+      "year": 2017,
+      "dataset": "Trisovic",
+      "dataset_url": "https://github.com/atrisovic/dataverse-r-study",
+      "source_url": "https://doi.org/10.7910/DVN/8AKACJ",
+      "domain": "Statistical methods",
+      "languages": [
+        "R",
+        "C++"
+      ],
+      "difficulty": "Hard",
+      "reason": "Bundled historical R/C++ package and changed estimation API; expensive bootstrap sections.",
+      "scope": "One original turnout-data specification; full Monte Carlo grid outside scope.",
+      "attempts": [
+        {
+          "id": "attempt-0001",
+          "path": "artifacts/gsynth/attempt-0001/"
+        },
+        {
+          "id": "attempt-0002",
+          "path": "artifacts/gsynth/attempt-0002/"
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "id": "robust-se",
+      "title": "How Robust Standard Errors Expose Methodological Problems They Do Not Fix, and What to Do About It",
+      "year": 2015,
+      "dataset": "Trisovic",
+      "dataset_url": "https://github.com/atrisovic/dataverse-r-study",
+      "source_url": "https://doi.org/10.7910/DVN/26935",
+      "domain": "Econometrics",
+      "languages": [
+        "R"
+      ],
+      "difficulty": "Hard",
+      "reason": "Hardcoded coefficient layouts and bootstrap covariance dimensions in historical scripts.",
+      "scope": "Accessible Dreher–Jensen empirical example; restricted files and full bootstrap suite explicitly assessed.",
+      "attempts": [
+        {
+          "id": "attempt-0001",
+          "path": "artifacts/robust-se/attempt-0001/"
+        },
+        {
+          "id": "attempt-0002",
+          "path": "artifacts/robust-se/attempt-0002/"
+        },
+        {
+          "id": "attempt-0003",
+          "path": "artifacts/robust-se/attempt-0003/"
+        },
+        {
+          "id": "attempt-0004",
+          "path": "artifacts/robust-se/attempt-0004/"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "id": "rqube",
+      "title": "Answering Regular Path Queries through Exemplars",
+      "year": 2022,
+      "dataset": "CompRep",
+      "dataset_url": "https://arxiv.org/html/2504.08684v1",
+      "source_url": "https://github.com/idea-iitd/RQuBE",
+      "domain": "Graph databases",
+      "languages": [
+        "C++"
+      ],
+      "difficulty": "Moderate",
+      "reason": "Research-specific compilation and graph/query file conventions with several search variants.",
+      "scope": "One bundled graph/query workload, sequential algorithms; no enlarged benchmark graphs.",
+      "attempts": [
+        {
+          "id": "attempt-0001",
+          "path": "artifacts/rqube/attempt-0001/"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "id": "adsketch",
+      "title": "Adaptive Time Series Anomaly Detection for Online Services via System Failure Sketching",
+      "year": 2022,
+      "dataset": "CompRep",
+      "dataset_url": "https://arxiv.org/html/2504.08684v1",
+      "source_url": "https://github.com/OpsPAI/ADSketch",
+      "domain": "Time series",
+      "languages": [
+        "Python"
+      ],
+      "difficulty": "Moderate",
+      "reason": "Python 3.6-era scientific dependencies and Numba/STUMPY integration.",
+      "scope": "Supplied Yahoo demonstration, headless plots, one native thread.",
+      "attempts": [
+        {
+          "id": "attempt-0001",
+          "path": "artifacts/adsketch/attempt-0001/"
+        }
+      ]
+    }
+  ]
+}

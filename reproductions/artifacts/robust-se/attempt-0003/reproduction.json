@@ -1,0 +1,34 @@
+{
+  "format": 3,
+  "repository": {
+    "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/26935",
+    "commit": "c30aa902c6cb6a10b50c412cb013ba1231b3dd10"
+  },
+  "image": "sha256:82603297e427863c5b97f7e794300620e99410313e31ecd59c0cc6593a849da5",
+  "experiments": [
+    "experiment_1"
+  ],
+  "analyses": [],
+  "command": [
+    "Rscript",
+    "DreherJensen.R"
+  ],
+  "working_directory": "/work",
+  "exit_code": 1,
+  "outputs": {
+    "stdout": "results/stdout.txt",
+    "stderr": "results/stderr.txt",
+    "files": []
+  },
+  "unattempted_experiments": [
+    {
+      "experiment": "experiment_2",
+      "reason": "AI-written: Original 99\u00d750 bootstraps and predictive simulation exceed bounded one-CPU scope; parameters are not reduced."
+    },
+    {
+      "experiment": "experiment_3",
+      "reason": "AI-written: Other applications outside selected scope; MilnerButhe2 dataset is restricted."
+    }
+  ],
+  "assessments": []
+}

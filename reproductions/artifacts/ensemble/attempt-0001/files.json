@@ -1,0 +1,142 @@
+[
+  {
+    "path": "Dockerfile",
+    "bytes": 326,
+    "sha256": "5ecb84df9fc72785f868468aaf44f23d67a1c73ca5800b704b7f688c92ecfeeb"
+  },
+  {
+    "path": "README.md",
+    "bytes": 3920,
+    "sha256": "993ef8d9db17a57c8b09a09a60cadf573ddbf87e92141f499f46549e9559592f"
+  },
+  {
+    "path": "dataverse-metadata.json",
+    "bytes": 28509,
+    "sha256": "74c68c87f30d7b396103d12048f4446993f176c73407501469bc34ad364529dd"
+  },
+  {
+    "path": "diagnostics/baseline.stderr",
+    "bytes": 300,
+    "sha256": "c87931ddc5b8381f0c057f97729cb7a31c7b43ef4671028fd2b9ffe8dfdc4451"
+  },
+  {
+    "path": "diagnostics/baseline.stdout",
+    "bytes": 2527,
+    "sha256": "dbee2446a85781c7fa9ded74f8f3354b7528118364b2db011ec1b32aaf893b9a"
+  },
+  {
+    "path": "diagnostics/cached.stderr",
+    "bytes": 351,
+    "sha256": "da58b754de9a76495b9f7f50b1d2f5217482e7d6a13ff49e31ef6996fc900e56"
+  },
+  {
+    "path": "diagnostics/repaired.stderr",
+    "bytes": 919,
+    "sha256": "6f0e7ff8c16841a2f0b3611ffe4949522c5344d1a9bedbd38611da9922f1e39c"
+  },
+  {
+    "path": "provenance.json",
+    "bytes": 8124,
+    "sha256": "c5505cb4676694c599ec202bff57c023f04eb8376aafd16a94222e45283b6b3c"
+  },
+  {
+    "path": "repair.diff",
+    "bytes": 5451,
+    "sha256": "5973daed4f3fac3dacdb6f9c3cfbbd9b6b82d42adf5553ead555606e3c8e3d06"
+  },
+  {
+    "path": "repair_log.jsonl",
+    "bytes": 3651,
+    "sha256": "94f9851b7a0a0398abbd3abe0a20de0327baab08c4e6fea32c0d354ef0035da8"
+  },
+  {
+    "path": "reproduction.json",
+    "bytes": 1910,
+    "sha256": "199bd2149bba1139c64435859ea3dd9fe1531cfaafe6e12be4c2f6c15c11327a"
+  },
+  {
+    "path": "results/MainEffects.pdf",
+    "bytes": 6646,
+    "sha256": "7e2d626b2290239cad7abd5ae4e0c928376245e47ef99f69b31884a51b8cf86e"
+  },
+  {
+    "path": "results/MainFigure1.pdf",
+    "bytes": 9978,
+    "sha256": "86e9c994716a01066002b49ecf6cfededd5dc18c1f3b75e45be19435bed3ed59"
+  },
+  {
+    "path": "results/NewBlame1.pdf",
+    "bytes": 6932,
+    "sha256": "bc030472b209a9ca6d1ae9eed8b11dcd705bf0409b8a76bc027e2681cf50cd0d"
+  },
+  {
+    "path": "results/NewBlame2.pdf",
+    "bytes": 6946,
+    "sha256": "5fc3383e21aeef72d4ea90b31d9c6eced0dad748e20d2da2eed94a403f368556"
+  },
+  {
+    "path": "results/Rplots.pdf",
+    "bytes": 41426,
+    "sha256": "27f3e486ed5b12a31314afbcdd081b7739dca508424f572098c36cd6dbe246a4"
+  },
+  {
+    "path": "results/SimCorr.pdf",
+    "bytes": 15230,
+    "sha256": "a45dc8ceda35117848ea107eb17ed9d5ec17868b7e9fa482b37b99ead5f2fa51"
+  },
+  {
+    "path": "results/SmallTypeMoneyIdeology.pdf",
+    "bytes": 8570,
+    "sha256": "92344f13ab6a69f6a880f169e44cc9feebd2a151924466cf24d6f61e1706eb4c"
+  },
+  {
+    "path": "results/SmallTypeSecuredIdeology_1.pdf",
+    "bytes": 9382,
+    "sha256": "006e546607aafb8c3241a83a16723f6a5fee26a3fcd70681134236203e4a15a8"
+  },
+  {
+    "path": "results/assessment.md",
+    "bytes": 1344,
+    "sha256": "69f4b61fb6e39da12c5d4be6b9222f39c762b704a2ffd001dc3917d0a9b7f70b"
+  },
+  {
+    "path": "results/first_empirical_effects.csv",
+    "bytes": 35731,
+    "sha256": "73758001a656da29497c42a5fd6f977ae0e3591c268bfd7b50d21e76cf19947d"
+  },
+  {
+    "path": "results/second_empirical_effects.csv",
+    "bytes": 1000166,
+    "sha256": "7198db2492b319ab53e950e1f02d325159b13c6d2b912946a647e69a1bd557fc"
+  },
+  {
+    "path": "results/session-info.txt",
+    "bytes": 450,
+    "sha256": "f2052b43238030bf8b6b7690575ce7e39816c6c532bddc1549a400de1f2d6081"
+  },
+  {
+    "path": "results/simulation_relative_mse.csv",
+    "bytes": 946,
+    "sha256": "f13b1fa4b986b2dbc2bdb716a97973a17c2256b287cee8780649d360102b7844"
+  },
+  {
+    "path": "results/stderr.txt",
+    "bytes": 919,
+    "sha256": "6f0e7ff8c16841a2f0b3611ffe4949522c5344d1a9bedbd38611da9922f1e39c"
+  },
+  {
+    "path": "results/stdout.txt",
+    "bytes": 53470,
+    "sha256": "f9dcb2f4cff1a9a182b7dbc93f791f48e169184ff5191b48bd2f5c23be670c82"
+  },
+  {
+    "path": "source.bundle",
+    "bytes": 5172981,
+    "sha256": "c185e670ce98a2641e0304ac2a64c0ecadaba7339ee186d600b1d97f6e43a28e"
+  },
+  {
+    "path": "study.json",
+    "bytes": 5185,
+    "sha256": "17f9b5a697d41f199b4a1f1213bd5868ae5807a115e44e283effa4eb31ddf555"
+  }
+]

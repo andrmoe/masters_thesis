@@ -1,0 +1,47 @@
+{
+  "format": 3,
+  "repository": {
+    "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/26935",
+    "commit": "c30aa902c6cb6a10b50c412cb013ba1231b3dd10"
+  },
+  "image": "sha256:d005e395761195da2dc65b59b7148a8d9c24e8d55dab64a4c216f5c750a8921a",
+  "experiments": [
+    "experiment_1"
+  ],
+  "analyses": [
+    "analysis_1"
+  ],
+  "command": [
+    "Rscript",
+    "reproduce.R"
+  ],
+  "working_directory": "/work",
+  "exit_code": 0,
+  "outputs": {
+    "stdout": "results/stdout.txt",
+    "stderr": "results/stderr.txt",
+    "files": [
+      "results/assessment.md",
+      "results/initial-im-diagnostic.csv",
+      "results/measurements.txt",
+      "results/poisson-coefficients.csv",
+      "results/sessionInfo.txt"
+    ]
+  },
+  "unattempted_experiments": [
+    {
+      "experiment": "experiment_2",
+      "reason": "AI-written: Original 99\u00d750 bootstraps and predictive simulation exceed bounded one-CPU scope; parameters are not reduced."
+    },
+    {
+      "experiment": "experiment_3",
+      "reason": "AI-written: Other applications outside selected scope; MilnerButhe2 dataset is restricted."
+    }
+  ],
+  "assessments": [
+    {
+      "analysis": "analysis_1",
+      "path": "results/assessment.md"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "dataset": "https://doi.org/10.7910/DVN/VSVMY7",
+  "files": [
+    {
+      "filename": "BJPS Codebook 070818.pdf",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/3194059?format=original",
+      "bytes": 108773,
+      "sha256": "61db9b4807c8c2398d185bf596bd8cda454c972b30a120f6c6769742efb6fdd9",
+      "content_disposition": "attachment; filename*=UTF-8''BJPS%20Codebook%20070818.pdf"
+    },
+    {
+      "filename": "BJPS Replication 1.R",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/3319178?format=original",
+      "bytes": 25064,
+      "sha256": "900321ab41c6832ae1a0cdf9cf420841336934b984af347c997669404c55ab89",
+      "content_disposition": "attachment; filename*=UTF-8''BJPS%20Replication%201.R"
+    },
+    {
+      "filename": "BJPS Replication 2.R",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/3194068?format=original",
+      "bytes": 17731,
+      "sha256": "0593e8272d747bd1a02e32b83cef996b7013af777d0784b06f8edf851cc8f866",
+      "content_disposition": "attachment; filename*=UTF-8''BJPS%20Replication%202.R"
+    },
+    {
+      "filename": "BJPS Replication 3.R",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/3194067?format=original",
+      "bytes": 4796,
+      "sha256": "4d3e10dca52d8a997750e915998b187ea26a2b7024e9390727c01e76dfa34b84",
+      "content_disposition": "attachment; filename*=UTF-8''BJPS%20Replication%203.R"
+    },
+    {
+      "filename": "BJPS Replication 4.R",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/3194072?format=original",
+      "bytes": 39742,
+      "sha256": "98cd02df08529e13cca795ae8890da9899a881c58ae1f1e499ac328a6fabc289",
+      "content_disposition": "attachment; filename*=UTF-8''BJPS%20Replication%204.R"
+    },
+    {
+      "filename": "BJPS Replication 5.R",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/3194074?format=original",
+      "bytes": 63600,
+      "sha256": "faecef1cda6e25f91b31ae1279a640289145a77411ebe1d2f3eacd5a59e7d799",
+      "content_disposition": "attachment; filename*=UTF-8''BJPS%20Replication%205.R"
+    },
+    {
+      "filename": "BJPS Replication 6.R",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/3194065?format=original",
+      "bytes": 18962,
+      "sha256": "d3fa6497b3f13cef06087441de6002ee09018e0b44ed5394ad2a2311bd39c0e8",
+      "content_disposition": "attachment; filename*=UTF-8''BJPS%20Replication%206.R"
+    },
+    {
+      "filename": "BJPS Replication 7.R",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/3194075?format=original",
+      "bytes": 21680,
+      "sha256": "a4251b34a0296df905f4e2fc44c30062f27aecd23faed22a23e705d712713736",
+      "content_disposition": "attachment; filename*=UTF-8''BJPS%20Replication%207.R"
+    },
+    {
+      "filename": "BJPS Replication 8.R",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/3194064?format=original",
+      "bytes": 15971,
+      "sha256": "321241379562716bc42330ee6a2f565b59aac66bf22be64218007c21bf0085c1",
+      "content_disposition": "attachment; filename*=UTF-8''BJPS%20Replication%208.R"
+    },
+    {
+      "filename": "Resolve Conjoint Cleaned No US 070718.RData",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/3194070?format=original",
+      "bytes": 243809,
+      "sha256": "1187d8fdbc50a6dd9dfadf86c736d1aa0557bfe9fafc984317cfa38e0de81fae",
+      "content_disposition": "attachment; filename*=UTF-8''Resolve%20Conjoint%20Cleaned%20No%20US%20070718.RData"
+    }
+  ]
+}

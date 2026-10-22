@@ -1,0 +1,25 @@
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Attaching package: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Warning message:
+Problem while computing `full_date_time = ymd_hm(full_date_text_hr)`.
+i  51 failed to parse. 
+Error in `[.data.frame`(to_clean, , wrong_loc) : 
+  undefined columns selected
+Calls: source ... eval -> eval -> ifelse -> paste -> [ -> [.data.frame
+Execution halted

@@ -1,0 +1,93 @@
+{
+  "Meta": {
+    "title": "Lethal Force in Black and White: Assessing Racial Disparities in the Circumstances of Police Killings",
+    "authors": [
+      "Shea Streeter"
+    ],
+    "year": 2019,
+    "venue": "The Journal of Politics 81(3), 1124\u20131132"
+  },
+  "Research Questions": {
+    "research_question_1": {
+      "explicit": true,
+      "value": "AI-written: Are circumstances surrounding police killings predictive of decedent race?",
+      "reason": "Publisher abstract and original author analysis script."
+    }
+  },
+  "Hypotheses": {
+    "hypothesis_1": {
+      "explicit": false,
+      "value": "AI-written: Circumstances may distinguish Black and White decedents.",
+      "research_questions": [
+        "research_question_1"
+      ],
+      "reason": "Question expressed as a testable hypothesis; not an execution outcome."
+    }
+  },
+  "Experiments": {
+    "experiment_1": {
+      "research_questions": [
+        "research_question_1"
+      ],
+      "hypotheses": [
+        "hypothesis_1"
+      ],
+      "experiment_description": "AI-written: Random-forest prediction of decedent race",
+      "strategy": "AI-written: Original full 750-tree forest and five 500-tree variable-category forests following original cleaning.",
+      "data": [
+        "Original 700-row PKAP_raw_data.csv and variable_names.csv"
+      ]
+    },
+    "experiment_2": {
+      "research_questions": [
+        "research_question_1"
+      ],
+      "hypotheses": [
+        "hypothesis_1"
+      ],
+      "experiment_description": "AI-written: LASSO, support-vector-machine and neural-network classification",
+      "strategy": "AI-written: Original cross-validation, holdout classification and model comparison.",
+      "data": [
+        "Original 700-row PKAP_raw_data.csv and variable_names.csv"
+      ]
+    },
+    "experiment_3": {
+      "research_questions": [
+        "research_question_1"
+      ],
+      "hypotheses": [
+        "hypothesis_1"
+      ],
+      "experiment_description": "AI-written: Appendix descriptives, importance and classification-cutoff robustness",
+      "strategy": "AI-written: Original supplementary descriptive and classification sensitivity analyses.",
+      "data": [
+        "Original 700-row PKAP_raw_data.csv and variable_names.csv"
+      ]
+    }
+  },
+  "Analyses": {
+    "analysis_1": {
+      "experiments": [
+        "experiment_1"
+      ],
+      "reason": "AI-written: Measure original author random-forest accuracy statistic and variable importance; record terminal OOB accuracy separately.",
+      "metrics": [
+        "Classification accuracy (%)",
+        "Permutation variable importance"
+      ],
+      "statistics": [],
+      "test": "Original seed 7 and tree counts unchanged; no numerical target or agreement threshold.",
+      "results": {
+        "Tables": {},
+        "Figures": {},
+        "Text": {}
+      }
+    }
+  },
+  "Interpretations": {},
+  "Conclusions": {},
+  "Future Work": {
+    "Suggested Research Questions": {},
+    "Suggested Hypotheses": {}
+  }
+}

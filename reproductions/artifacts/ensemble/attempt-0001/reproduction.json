@@ -1,0 +1,67 @@
+{
+  "format": 3,
+  "repository": {
+    "url": "https://doi.org/10.7910/DVN/BQMLQW",
+    "commit": "1ac9119acdb7d2c14721cd0a351f1b65b81ba29b"
+  },
+  "image": "sha256:bf1e2d28231b5c80eeb06822da1cb0367b8636433acb8ae266854f777d758c00",
+  "experiments": [
+    "experiment_1",
+    "experiment_2",
+    "experiment_3"
+  ],
+  "analyses": [
+    "analysis_1",
+    "analysis_2",
+    "analysis_3"
+  ],
+  "command": [
+    "sh",
+    "/work/reproduce.sh"
+  ],
+  "working_directory": "/work",
+  "exit_code": 0,
+  "outputs": {
+    "stdout": "results/stdout.txt",
+    "stderr": "results/stderr.txt",
+    "files": [
+      "results/MainEffects.pdf",
+      "results/MainFigure1.pdf",
+      "results/NewBlame1.pdf",
+      "results/NewBlame2.pdf",
+      "results/Rplots.pdf",
+      "results/SimCorr.pdf",
+      "results/SmallTypeMoneyIdeology.pdf",
+      "results/SmallTypeSecuredIdeology_1.pdf",
+      "results/assessment.md",
+      "results/first_empirical_effects.csv",
+      "results/second_empirical_effects.csv",
+      "results/session-info.txt",
+      "results/simulation_relative_mse.csv"
+    ]
+  },
+  "unattempted_experiments": [
+    {
+      "experiment": "experiment_4",
+      "reason": "Full Monte Carlo simulation regeneration requires repeated fitting of nine models and archived R/Java dependencies; VM resource scope uses supplied original simulation snapshots."
+    },
+    {
+      "experiment": "experiment_5",
+      "reason": "Empirical ensemble retraining excluded; original supplied prediction snapshots are analysed. Original training fails matrix class length check on modern R; full dependency stack not repaired or validated."
+    }
+  ],
+  "assessments": [
+    {
+      "analysis": "analysis_1",
+      "path": "results/assessment.md"
+    },
+    {
+      "analysis": "analysis_2",
+      "path": "results/assessment.md"
+    },
+    {
+      "analysis": "analysis_3",
+      "path": "results/assessment.md"
+    }
+  ]
+}

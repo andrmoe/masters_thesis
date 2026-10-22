@@ -1,0 +1,67 @@
+{
+  "Meta": {
+    "title": "Adaptive Time Series Anomaly Detection for Online Services via System Failure Sketching",
+    "authors": [],
+    "year": 2022
+  },
+  "Research Questions": {
+    "research_question_1": {
+      "explicit": true,
+      "value": "AI-written: Can failure-pattern sketching detect time-series anomalies while grouping interpretable patterns?",
+      "reason": "Author repository README and ICSE 2022 paper arXiv:2201.02944."
+    }
+  },
+  "Hypotheses": {},
+  "Experiments": {
+    "experiment_1": {
+      "research_questions": [
+        "research_question_1"
+      ],
+      "hypotheses": [],
+      "experiment_description": "AI-written: Yahoo real-data offline anomaly detection using the supplied A1Benchmark, original parameter map, seed 1234, and train/test split.",
+      "strategy": "AI-written: Execute the unchanged Yahoo demonstration sequentially on all supplied real series, bounded at 360 seconds on this one-CPU VM.",
+      "data": [
+        "Original source data/yahoo.zip, SHA256 5906550fdd473c8847fef6a9c2470547e1bf7cb335c2cef8de43a58ffc8b1b48"
+      ]
+    },
+    "experiment_2": {
+      "research_questions": [
+        "research_question_1"
+      ],
+      "hypotheses": [],
+      "experiment_description": "AI-written: AIOps18 and industry datasets and online adaptive detection.",
+      "strategy": "Original author demos.",
+      "data": [
+        "Author supplied industry.zip and aiops18.zip"
+      ]
+    }
+  },
+  "Analyses": {
+    "analysis_1": {
+      "experiments": [
+        "experiment_1"
+      ],
+      "reason": "AI-written: Original author Yahoo demonstration reports macro-average precision, recall and F1 over the supplied real series.",
+      "metrics": [
+        "Precision",
+        "Recall",
+        "F1"
+      ],
+      "statistics": [
+        "Unweighted per-series mean as computed by original yahoo_demo.py"
+      ],
+      "test": "AI-written: Report original output and coverage; comparison criteria declared before execution in comparison-criteria.md. No paper-table numerical agreement threshold and no parameter tuning.",
+      "results": {
+        "Tables": {},
+        "Figures": {},
+        "Text": {}
+      }
+    }
+  },
+  "Interpretations": {},
+  "Conclusions": {},
+  "Future Work": {
+    "Suggested Research Questions": {},
+    "Suggested Hypotheses": {}
+  }
+}

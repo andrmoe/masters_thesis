@@ -1,0 +1,12 @@
+{
+  "AI-written": true,
+  "repository": "https://github.com/OpsPAI/ADSketch",
+  "commit": "f7bd642c93ff25612514ed711f47cc095a6a66fd",
+  "paper": "https://arxiv.org/abs/2201.02944",
+  "data": {
+    "path": "data/yahoo.zip",
+    "sha256": "5906550fdd473c8847fef6a9c2470547e1bf7cb335c2cef8de43a58ffc8b1b48",
+    "origin": "Bundled in original author Git commit"
+  },
+  "source_bundle_sha256": "1c22946ac65817e2f942a39b1f907bf7cef64bcb38432a5dd654f07239c0ebf6"
+}

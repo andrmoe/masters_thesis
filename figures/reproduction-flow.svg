@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1360" height="650" viewBox="0 0 1360 650" role="img" aria-labelledby="title desc">
+<title id="title">Reproduction workflow and artifact dependencies</title>
+<desc id="desc">AI-written diagram. Snelleman extracts study.json. A repair agent consumes the study and produces a Dockerfile and patch. The runner consumes the study, Dockerfile and patch and produces a reproduction record and results. A researcher reviews the study, record and results. Solid arrows mean reads; dashed arrows mean writes.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#64748b"/></marker></defs>
+<style>text{font-family:Arial,sans-serif;fill:#172554} .heading{font-size:17px;font-weight:bold} .label{font-size:16px} .file{font-family:monospace;font-size:17px} .small{font-size:13px;fill:#475569} .edge{fill:none;stroke:#64748b;stroke-width:1.7;marker-end:url(#arrow)} .write{stroke-dasharray:6 5} </style>
+<rect width="1360" height="650" fill="#fff"/>
+
+<rect x="30" y="110" width="280" height="370" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+<text x="46" y="137" class="small" text-anchor="start">1  EXTRACT STUDY</text>
+<rect x="370" y="110" width="280" height="370" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+<text x="386" y="137" class="small" text-anchor="start">2  REPAIR CODE</text>
+<rect x="710" y="110" width="280" height="370" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+<text x="726" y="137" class="small" text-anchor="start">3  EXECUTE</text>
+<rect x="1050" y="110" width="280" height="370" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+<text x="1066" y="137" class="small" text-anchor="start">4  REVIEW</text>
+<path class="edge" d="M 290 305 H 335 V 200 H 390"/>
+<path class="edge" d="M 50 305 H 15 V 65 H 850 V 165"/>
+<path class="edge" d="M 850 65 H 1190 V 165"/>
+<text x="650" y="49" class="small" text-anchor="middle">Study IDs and experiment descriptions</text>
+<path class="edge" d="M 650 305 H 680 V 195 H 730"/>
+<path class="edge" d="M 650 365 H 695 V 220 H 730"/>
+<path class="edge" d="M 990 305 H 1010 V 195 H 1070"/>
+<path class="edge" d="M 990 365 H 1025 V 220 H 1070"/>
+<rect x="50" y="165" width="240" height="80" rx="12" fill="#dbeafe" stroke="#2563eb"/>
+<text x="170" y="188" class="heading" text-anchor="middle">Snelleman extractor + LLM</text>
+<text x="170" y="212" class="label" text-anchor="middle">Extract the paper’s study</text>
+<rect x="390" y="165" width="240" height="80" rx="12" fill="#dbeafe" stroke="#2563eb"/>
+<text x="510" y="188" class="heading" text-anchor="middle">Code repair agent</text>
+<text x="510" y="212" class="label" text-anchor="middle">Prepare executable code</text>
+<text x="510" y="231" class="small" text-anchor="middle">Internal workflow is unrestricted</text>
+<rect x="730" y="165" width="240" height="80" rx="12" fill="#dbeafe" stroke="#2563eb"/>
+<text x="850" y="188" class="heading" text-anchor="middle">reprorun + Docker</text>
+<text x="850" y="212" class="label" text-anchor="middle">Run experiments sequentially</text>
+<text x="850" y="231" class="small" text-anchor="middle">One container · internet enabled</text>
+<rect x="1070" y="165" width="240" height="80" rx="12" fill="#dbeafe" stroke="#2563eb"/>
+<text x="1190" y="188" class="heading" text-anchor="middle">Researcher</text>
+<text x="1190" y="212" class="label" text-anchor="middle">Inspect the evidence</text>
+<path class="edge write" d="M 170 245 V 278"/>
+<path class="edge write" d="M 520 245 V 278"/>
+<path class="edge write" d="M 430 245 V 260 H 380 V 365 H 388"/>
+<path class="edge write" d="M 860 245 V 278"/>
+<path class="edge write" d="M 770 245 V 260 H 720 V 365 H 728"/>
+<rect x="50" y="280" width="240" height="50" rx="3" fill="#fef3c7" stroke="#b45309"/>
+<text x="170" y="311" class="file" text-anchor="middle">study.json</text>
+<rect x="390" y="280" width="260" height="50" rx="3" fill="#fef3c7" stroke="#b45309"/>
+<text x="520" y="311" class="file" text-anchor="middle">Dockerfile</text>
+<rect x="390" y="340" width="260" height="50" rx="3" fill="#fef3c7" stroke="#b45309"/>
+<text x="520" y="371" class="file" text-anchor="middle">repair.diff</text>
+<rect x="730" y="280" width="260" height="50" rx="3" fill="#fef3c7" stroke="#b45309"/>
+<text x="860" y="311" class="file" text-anchor="middle">reproduction.json</text>
+<rect x="730" y="340" width="260" height="50" rx="3" fill="#dcfce7" stroke="#15803d"/>
+<rect x="736" y="346" width="248" height="38" rx="1" fill="none" stroke="#15803d"/>
+<text x="860" y="371" class="file" text-anchor="middle">results/</text>
+<text x="1190" y="295" class="label" text-anchor="middle">Check what ran, what changed,</text>
+<text x="1190" y="320" class="label" text-anchor="middle">and what the outputs show.</text>
+<text x="1190" y="360" class="small" text-anchor="middle">Agreement is not required.</text>
+<rect x="30" y="560" width="1300" height="64" rx="8" fill="#fff" stroke="#cbd5e1"/>
+<rect x="50" y="579" width="28" height="22" rx="7" fill="#dbeafe" stroke="#2563eb"/>
+<text x="88" y="596" class="small" text-anchor="start">Process / responsible actor</text>
+<rect x="300" y="579" width="28" height="22" rx="2" fill="#fef3c7" stroke="#b45309"/>
+<text x="338" y="596" class="small" text-anchor="start">File</text>
+<rect x="420" y="579" width="28" height="22" rx="2" fill="#dcfce7" stroke="#15803d"/>
+<rect x="424" y="583" width="20" height="14" rx="1" fill="none" stroke="#15803d"/>
+<text x="458" y="596" class="small" text-anchor="start">Directory</text>
+<path class="edge write" d="M 570 590 H 620"/>
+<text x="632" y="596" class="small" text-anchor="start">Writes</text>
+<path class="edge" d="M 750 590 H 800"/>
+<text x="812" y="596" class="small" text-anchor="start">Reads / depends on</text>
+<text x="1310" y="596" class="small" text-anchor="end">AI-written diagram</text>
+</svg>

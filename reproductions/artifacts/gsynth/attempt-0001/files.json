@@ -1,0 +1,77 @@
+[
+  {
+    "path": "Dockerfile",
+    "bytes": 1042,
+    "sha256": "da8f0283a03509db08dce0fe7cda9707a254ea11e9853e24ae6dca3e790efbc5"
+  },
+  {
+    "path": "README.md",
+    "bytes": 833,
+    "sha256": "3ef35d2bf981dace7a269d2a255bd621bb11cad9a866ea4f8e224f641f7f49e5"
+  },
+  {
+    "path": "provenance.json",
+    "bytes": 2538,
+    "sha256": "ac9f1a9e4da84099481005f041e21a26118c1cf4b48e1a50e5edcfe480b4bccd"
+  },
+  {
+    "path": "repair.diff",
+    "bytes": 698,
+    "sha256": "8d537b0e5625d790d149436e280c9389cae6b8ae54f4854ba81801c5d492c373"
+  },
+  {
+    "path": "repair_log.jsonl",
+    "bytes": 1211,
+    "sha256": "777703bd910fd3406c43015f9256c99d3fe8d07404618cd5d547eeba0e94cc6b"
+  },
+  {
+    "path": "reproduction.json",
+    "bytes": 1259,
+    "sha256": "dee44d345b51af21a48850e918845f924ac1c3aca7e2415a222d270f3d372ade"
+  },
+  {
+    "path": "results/assessment.md",
+    "bytes": 1137,
+    "sha256": "4570fbbff5b38fd053a2c545c09391965fda5ac005abd9c4aadf8d42a356ca87"
+  },
+  {
+    "path": "results/stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "results/stdout.txt",
+    "bytes": 487,
+    "sha256": "c41abddf694ae5bdf3e20f9a74ddf6a27609bbf96f2de8c2cfe3f1f2f8826168"
+  },
+  {
+    "path": "results/table2-column1.csv",
+    "bytes": 217,
+    "sha256": "f9e2785c0dcb514d976b367d6972f04a95fed1b75510523e7338cc58aa7a0f79"
+  },
+  {
+    "path": "results/table2-column1.rds",
+    "bytes": 45251,
+    "sha256": "4d45470eae08e4627eed272f4b46a2e6de03a846ef45daa82230cea74960df47"
+  },
+  {
+    "path": "source.bundle",
+    "bytes": 652163,
+    "sha256": "6a5c9d48aa0822f79264e9acd6860b0a4433f2f528ecc0873cda043221f32b4d"
+  },
+  {
+    "path": "study-review.md",
+    "bytes": 15153,
+    "sha256": "b816a80673abdf2107346a30eda2e9eb760239620cd09bc43e37fafaf88258b1"
+  },
+  {
+    "path": "study.json",
+    "bytes": 3520,
+    "sha256": "8d2752671cf76b0a8c9d96988f2465312e9f5452a1aaa4767c76fa711b1ecfe1"
+  },
+  {
+    "path": "upstream-review-compiler.txt",
+    "bytes": 37,
+    "sha256": "137ec306f670e2629adc524471e68caa1201524741dd3f7b4d3f63990dc33b98"
+  }
+]

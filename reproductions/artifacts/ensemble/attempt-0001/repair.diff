@@ -1,0 +1,128 @@
+diff --git a/RepCode.R b/RepCode.R
+index 7a758ba..80e688c 100644
+--- a/RepCode.R
++++ b/RepCode.R
+@@ -1,3 +1,6 @@
++# AI-written repair annotations: container output location and headless display-list recording.
++pdf("Rplots.pdf")
++dev.control(displaylist="enable")
+ #############
+ #############
+ ###Replication file for Grimmer, Messing, and Westwood
+@@ -8,6 +11,7 @@
+ 
+ 
+ 
++cat("BEGIN experiment_1: supplied Monte Carlo results\n")
+ ##Creating Figure 1, analyzing simulations
+ ##set working directory to where the simulations are located
+ 
+@@ -176,6 +180,8 @@ dev.copy(device=pdf, file='SimCorr.pdf', height = 6 , width = 6)
+ dev.off()
+ 
+ 
++write.csv(results,"simulation_relative_mse.csv",row.names=FALSE)
++cat("END experiment_1\nBEGIN experiment_2: first empirical analysis\n")
+ ##########Experiment 1
+ 
+ ##this analysis creates the main effects in Figure 2
+@@ -420,9 +426,9 @@ colnames(treats)[55]<- paste(party.short[2], along.short[2], sep='_x_')
+ source('SLF_round2.R')
+ 
+ ##now running the super learning
+-part1<- supLearnFit(covs, treats, approve_bi, 10, F)
++# AI-written scope: model refitting excluded; use original supplied predictions below.
+ 
+-part2<- wrap.func(covs, approve_bi, treats, covs, approve_bi, treats, speed=F)
++# AI-written scope: model refitting excluded; no new predictions generated.
+ 
+ ##predictions are loaded here.  
+ load('HetExperimentPreds.RData')
+@@ -437,7 +443,7 @@ for(z in 1:nrow(preds$Treated)){
+ 
+ 
+ X<- covs
+-treat<- treats
++treat<- as.matrix(treats)
+ 
+ 
+ model.mat<- model.matrix(~X*treat)
+@@ -753,6 +759,8 @@ dev.copy(device=pdf, file='SmallTypeSecuredIdeology_1.pdf', height = 12, width =
+ dev.off()
+ 
+ 
++write.csv(data.frame(effect=as.vector(final.eff)),"first_empirical_effects.csv",row.names=FALSE)
++cat("END experiment_2\nBEGIN experiment_3: second empirical analysis\n")
+ ####this replicates the analysis for Table 6 and Figure 5
+ 
+ data<-  read.delim("Public_v_Private_and_Taunting_2.csv", sep=',')
+@@ -872,7 +880,7 @@ treats<- rms[,28:29]
+ app<- rms[,30]	
+ 	
+ X<- covs
+-treat<- treats	
++treat<- as.matrix(treats)	
+ 	
+ model.mat<- model.matrix(~X*treat)	
+ 
+@@ -1067,14 +1075,14 @@ point_size<- point_size/sum(point_size)
+ par(mfrow=c(1,1))
+ 
+ create.plot4(right_var, 1, name3, left_var, 1:26, new_label,xlim =c(-0.25, 0.25), left =10, right = 8, multiplier= rep(point_size, 2), mult = 50)
+-dev.copy(device=pdf, file='~/Dropbox/creditClaimingProjects/het/NewBlame1.pdf', height = 8, width = 6)
++dev.copy(device=pdf, file='NewBlame1.pdf', height = 8, width = 6)
+ dev.off()
+ 
+ 
+ 
+ create.plot4(right_var, 2, name3[2], left_var, 1:26, new_label,xlim =c(-0.25, 0.25), left =10, right = 8, multiplier= rep(point_size, 2), mult = 50)
+ 
+-dev.copy(device=pdf, file='~/Dropbox/creditClaimingProjects/het/NewBlame2.pdf', height = 8, width = 6)
++dev.copy(device=pdf, file='NewBlame2.pdf', height = 8, width = 6)
+ dev.off()
+ 
+ 
+@@ -1086,3 +1094,9 @@ dev.off()
+ 
+ 
+ 
++
++# AI-written observation exports; values retained without target comparisons.
++write.csv(data.frame(effect=as.vector(final.eff)),"second_empirical_effects.csv",row.names=FALSE)
++writeLines(capture.output(sessionInfo()),"session-info.txt")
++cat("END experiment_3\n")
++while(dev.cur()>1) dev.off()
+diff --git a/assessment.md b/assessment.md
+new file mode 100644
+index 0000000..205db49
+--- /dev/null
++++ b/assessment.md
+@@ -0,0 +1,11 @@
++# Scoped analysis assessment
++
++**AI-written.**
++
++This artifact executes original postprocessing of supplied Monte Carlo results and two empirical datasets/prediction snapshots. It does not regenerate simulations, refit the nine-model ensemble, or establish independent agreement with published scientific claims.
++
++The declared criterion before repaired execution was successful evaluation of the original analysis operations and preservation of outputs, warnings, and nonfinite values. There is no scientific target used for optimization. Numerical CSV exports preserve original calculated values, including missing/nonfinite effects. Original formula-plot warnings are retained.
++
++Repairs convert data-frame treatments to numeric matrices for model.matrix, enable PDF display-list recording for headless dev.copy, and replace two personal Dropbox paths. Two model-refitting calls are omitted under the declared scope because supplied original predictions are used immediately afterward. Original R 4 training failure (matrix class vector causing an if condition of length greater than one) remains outside this repair. Original simulation-generation and model-training code are not validated.
++
++Study descriptions are AI-written from the publisher abstract, original README and script; full-paper extraction and independent review are incomplete.
+diff --git a/reproduce.sh b/reproduce.sh
+new file mode 100644
+index 0000000..6251252
+--- /dev/null
++++ b/reproduce.sh
+@@ -0,0 +1,11 @@
++#!/bin/sh
++# AI-written harness: sequential analysis in a single container.
++set -eu
++export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
++mkdir /tmp/analysis
++cd /tmp/analysis
++cp /work/*.RData /work/*.csv /work/SLF_round2.R .
++# Always preserve generated figures and numeric exports if analysis fails.
++trap 'cp /work/assessment.md "$REPRO_RESULTS/assessment.md"; for p in *.pdf simulation_relative_mse.csv first_empirical_effects.csv second_empirical_effects.csv session-info.txt; do if [ -f "$p" ]; then cp "$p" "$REPRO_RESULTS/"; fi; done' EXIT
++ulimit -v 1200000
++timeout 300 Rscript /work/RepCode.R

@@ -11,6 +11,7 @@ license = "MIT"
 
 [project.scripts]
 reproenv = "reproenv:main"
+reprorun = "reprorun:main"
 
 [tool.setuptools]
-py-modules = ["reproenv"]
+py-modules = ["reproenv", "reprorun"]

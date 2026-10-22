@@ -1,0 +1,17 @@
+diff --git a/reproduce.R b/reproduce.R
+new file mode 100644
+index 0000000..3408912
+--- /dev/null
++++ b/reproduce.R
+@@ -0,0 +1,11 @@
++# AI-written resource-bounded harness; original estimator, data and settings.
++options(warn=1)
++library(gsynth)
++data(gsynth)
++setwd(Sys.getenv("REPRO_RESULTS", "/results"))
++cat("Table 2 original models sequentially, seed 2139, 2000 bootstrap replicates\n")
++t0 <- proc.time()
++out.did1 <- interFE(turnout ~ policy_edr, data=turnout, index=c("abb","year"), r=0, force="two-way", SE=TRUE, nboots=2000, seed=2139)
++saveRDS(out.did1,"table2-column1.rds")
++write.csv(out.did1$est.table,"table2-column1.csv")
++cat("Column1 elapsed", (proc.time()-t0)[[3]], "seconds\n")

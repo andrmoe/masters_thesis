@@ -1,0 +1,62 @@
+[
+  {
+    "path": "Dockerfile",
+    "bytes": 273,
+    "sha256": "143c3f696dffe4bc5269358aa29b2515c0bc41f8509197e1b328afe793d5aa76"
+  },
+  {
+    "path": "README.md",
+    "bytes": 1472,
+    "sha256": "280d140b88e64faeff8b6f0df0a8c27e5bb7c2a1a65334c3ccbfe47a7e0169f9"
+  },
+  {
+    "path": "SHA256SUMS",
+    "bytes": 425,
+    "sha256": "12bc9d88068b26d558b5c36f3cfa84deed97259ad6f9d07196d890d2dc386ac7"
+  },
+  {
+    "path": "drive-citation-response.html",
+    "bytes": 2457,
+    "sha256": "b5621a8b2c135091229b3515afda6a21c24c8a1a54818e2b1aa99ff81cdd0404"
+  },
+  {
+    "path": "drive-coauthor-response.html",
+    "bytes": 2457,
+    "sha256": "9c2fe7e6d49dc2122a273452aa6a5fbe37f8f4b322e0884f68a2a43950b99cbc"
+  },
+  {
+    "path": "repair.diff",
+    "bytes": 664,
+    "sha256": "253fcc777ef2af6aa858621e79167f218e099e0f330b59313371cd31b7ff2b4e"
+  },
+  {
+    "path": "repair_log.jsonl",
+    "bytes": 2413,
+    "sha256": "8e66ca34054067743feafab8d390cccc019c12190ceb227ed69ce72f54173741"
+  },
+  {
+    "path": "reproduction.json",
+    "bytes": 877,
+    "sha256": "ce34326a8837d3e9a279b0c9e363935b84f18eb3255748381ed0f6c11a57ad5d"
+  },
+  {
+    "path": "results/stderr.txt",
+    "bytes": 111,
+    "sha256": "65096d6f451f05bb771ff43bc51af3c7b1c5c8991dea3d72f39302dedfce26ad"
+  },
+  {
+    "path": "results/stdout.txt",
+    "bytes": 148,
+    "sha256": "9a551b3718c33c3d3ee9077e160376e96e20865387c88e6c1af9ba0a5563c463"
+  },
+  {
+    "path": "source.bundle",
+    "bytes": 59730,
+    "sha256": "e9b96b76c8bbacc3f24ee6272e8e61319c2c296803798f06d700845925be66d3"
+  },
+  {
+    "path": "study.json",
+    "bytes": 1091,
+    "sha256": "7a387a7261137c36d079253655a9790385067b66de53cf4a5faaa4a2b958c0b9"
+  }
+]

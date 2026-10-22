@@ -1,0 +1,30 @@
+{
+  "format": 3,
+  "repository": {
+    "url": "https://github.com/idea-iitd/RQuBE",
+    "commit": "0fba3b70a9392f5420f079638f29b87e975c6b90"
+  },
+  "image": "sha256:3755310eb2c002dd4c5a7a494c5f3dfd0d766050904719d4f0001e6209278e90",
+  "experiments": [
+    "experiment_1"
+  ],
+  "analyses": [],
+  "command": [
+    "sh",
+    "reproduce.sh"
+  ],
+  "working_directory": "/work",
+  "exit_code": 66,
+  "outputs": {
+    "stdout": "results/stdout.txt",
+    "stderr": "results/stderr.txt",
+    "files": []
+  },
+  "unattempted_experiments": [
+    {
+      "experiment": "experiment_1",
+      "reason": "Both original BBFS programs compiled successfully, but no graph/query benchmark was executed. The repository omits the advertised RQuBE and parameter-experiment implementations; large external author graphs were not loaded for a replacement benchmark."
+    }
+  ],
+  "assessments": []
+}

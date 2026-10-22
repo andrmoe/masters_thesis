@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parent.parent
 def make(folder, name):
     path = folder / name
     path.mkdir(parents=True)
-    (path / "manifest.json").write_text("{}")
+    (path / "reproduction.json").write_text('{"format": 3}')
     return path
 
 
@@ -36,14 +36,56 @@ class FindTests(unittest.TestCase):
             self.assertIsNone(reproenv.find_newest(Path(tmp)))
 
 
-class ExampleTests(unittest.TestCase):
-    def test_example(self):
-        result = subprocess.run([sys.executable, ROOT / "reproenv.py", ROOT / "examples" / "msf-cnn"],
-                                capture_output=True, text=True, check=True)
-        self.assertIn("https://github.com/TinyPART/msf-CNN at commit fd74a7c", result.stdout)
-        self.assertIn("No changes to the code.", result.stdout)
-        self.assertIn("FROM python:3.11-slim", result.stdout)
-        self.assertNotIn("Entry point", result.stdout)
+class ViewerTests(unittest.TestCase):
+    def test_current_format_shows_container_and_experiment_order(self):
+        import json
+
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp)
+            record = {
+                "format": 3,
+                "repository": {"url": "https://example.org/source", "commit": "abc123"},
+                "image": "sha256:example",
+                "experiments": ["experiment_1", "experiment_2"],
+                "analyses": ["analysis_1"], "command": ["./run_experiments.sh"],
+                "working_directory": "/work", "exit_code": 0,
+                "outputs": {"stdout": "results/stdout.txt",
+                            "stderr": "results/stderr.txt", "files": []},
+                "unattempted_experiments": [],
+                "assessments": [{"analysis": "analysis_1",
+                                 "path": "results/assessment.md"}],
+            }
+            (path / "reproduction.json").write_text(json.dumps(record))
+            result = subprocess.run([sys.executable, ROOT / "reproenv.py", path],
+                                    capture_output=True, text=True, check=True)
+            self.assertIn("https://example.org/source at commit abc123", result.stdout)
+            self.assertIn("One container: exit code 0", result.stdout)
+            self.assertIn("Experiment order: experiment_1, experiment_2", result.stdout)
+            self.assertIn("analysis_1: results/assessment.md", result.stdout)
+            self.assertNotIn("matched", result.stdout)
+
+    def test_version_one_still_readable(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp)
+            (path / "manifest.json").write_text('{"format": 1}')
+            result = subprocess.run([sys.executable, ROOT / "reproenv.py", path],
+                                    capture_output=True, text=True, check=True)
+            self.assertIn("No Dockerfile.", result.stdout)
+            self.assertNotIn("== Comparison ==", result.stdout)
+
+    def test_companion_cannot_escape_artifact(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp)
+            artifact = path / "artifact"
+            artifact.mkdir()
+            (path / "outside.json").write_text('{}')
+            for name in ('../outside.json', str(path / 'outside.json')):
+                with self.assertRaises(ValueError):
+                    reproenv.read_companion(artifact, name)
+            (artifact / "link.json").symlink_to(path / "outside.json")
+            with self.assertRaises(ValueError):
+                reproenv.read_companion(artifact, 'link.json')
+
 
 
 if __name__ == "__main__":

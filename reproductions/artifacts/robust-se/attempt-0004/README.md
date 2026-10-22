@@ -1,0 +1,3 @@
+# Robust standard errors: compatibility repair
+
+AI-written. Original author source and accessible Dreher–Jensen data, identified by local snapshot commit and download SHA256 provenance. This attempt repairs personal paths and modern-R covariance shape compatibility. It executes the original Poisson model and original bootstrap setup through Dhat, preserving original formula and seed. It reports conventional/robust standard errors. The 99×50 bootstrap, negative-binomial application and predictive simulation are explicitly NOT executed; no bootstrap p-value or full paper reproduction is claimed.

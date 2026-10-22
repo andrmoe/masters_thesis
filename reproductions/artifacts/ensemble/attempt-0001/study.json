@@ -1,0 +1,152 @@
+{
+  "Meta": {
+    "title": "Estimating Heterogeneous Treatment Effects and the Effects of Heterogeneous Treatments with Ensemble Methods",
+    "authors": [
+      "Justin Grimmer",
+      "Solomon Messing",
+      "Sean J. Westwood"
+    ],
+    "year": 2017,
+    "venue": "Political Analysis 25(4), 413\u2013434"
+  },
+  "Research Questions": {
+    "research_question_1": {
+      "explicit": true,
+      "value": "How can ensemble methods estimate variation in treatment responses and responses to heterogeneous treatments?",
+      "reason": "AI-written paraphrase of publisher abstract; not an execution finding."
+    }
+  },
+  "Hypotheses": {
+    "hypothesis_1": {
+      "explicit": false,
+      "value": "Combining multiple models can provide useful estimates of heterogeneous treatment effects.",
+      "research_questions": [
+        "research_question_1"
+      ],
+      "reason": "AI-written methodological inference from abstract and author replication materials; independent full-paper extraction pending."
+    }
+  },
+  "Experiments": {
+    "experiment_1": {
+      "research_questions": [
+        "research_question_1"
+      ],
+      "hypotheses": [
+        "hypothesis_1"
+      ],
+      "experiment_description": "AI-written: Analysis of Monte Carlo model comparisons",
+      "strategy": "AI-written: Aggregate supplied five-repetition discrete/continuous, sparse/dense simulation results and construct relative MSE tables and weight relationship plot.",
+      "data": [
+        "Original test_*.RData simulation results"
+      ]
+    },
+    "experiment_2": {
+      "research_questions": [
+        "research_question_1"
+      ],
+      "hypotheses": [
+        "hypothesis_1"
+      ],
+      "experiment_description": "AI-written: First empirical randomized experiment",
+      "strategy": "AI-written: Analyse heterogeneous treatments and response differences; original script includes main effects and conditional effects derived from supplied ensemble predictions.",
+      "data": [
+        "Original Het_Experiment.RData and HetExperimentPreds.RData"
+      ]
+    },
+    "experiment_3": {
+      "research_questions": [
+        "research_question_1"
+      ],
+      "hypotheses": [
+        "hypothesis_1"
+      ],
+      "experiment_description": "AI-written: Second empirical randomized experiment",
+      "strategy": "AI-written: Analyse credit-condition treatment response variation and conditional effects from supplied ensemble predictions.",
+      "data": [
+        "Original Public_v_Private_and_Taunting_2.csv, JackmanEstimates.csv, BlamePreds.RData"
+      ]
+    },
+    "experiment_4": {
+      "research_questions": [
+        "research_question_1"
+      ],
+      "hypotheses": [
+        "hypothesis_1"
+      ],
+      "experiment_description": "AI-written: Monte Carlo simulation generation and model fitting",
+      "strategy": "AI-written: Run the original monte_*.R simulations and fit the original model ensemble.",
+      "data": [
+        "Original simulation-generating code"
+      ]
+    },
+    "experiment_5": {
+      "research_questions": [
+        "research_question_1"
+      ],
+      "hypotheses": [
+        "hypothesis_1"
+      ],
+      "experiment_description": "AI-written: Empirical ensemble model fitting",
+      "strategy": "AI-written: Fit original cross-validated ensemble models before computing empirical treatment-effect predictions.",
+      "data": [
+        "Original empirical input data and SLF_round2.R"
+      ]
+    }
+  },
+  "Analyses": {
+    "analysis_1": {
+      "experiments": [
+        "experiment_1"
+      ],
+      "reason": "AI-written: original author script postprocessing and figures; this artifact executes scoped analysis using original supplied snapshots.",
+      "metrics": [
+        "Relative mean squared error"
+      ],
+      "statistics": [],
+      "test": "Original author script calculations; no independent scientific agreement test claimed.",
+      "results": {
+        "Tables": {},
+        "Figures": {},
+        "Text": {}
+      }
+    },
+    "analysis_2": {
+      "experiments": [
+        "experiment_2"
+      ],
+      "reason": "AI-written: original author script postprocessing and figures; this artifact executes scoped analysis using original supplied snapshots.",
+      "metrics": [
+        "Estimated treatment effects"
+      ],
+      "statistics": [],
+      "test": "Original author script calculations; no independent scientific agreement test claimed.",
+      "results": {
+        "Tables": {},
+        "Figures": {},
+        "Text": {}
+      }
+    },
+    "analysis_3": {
+      "experiments": [
+        "experiment_3"
+      ],
+      "reason": "AI-written: original author script postprocessing and figures; this artifact executes scoped analysis using original supplied snapshots.",
+      "metrics": [
+        "Estimated treatment effects"
+      ],
+      "statistics": [],
+      "test": "Original author script calculations; no independent scientific agreement test claimed.",
+      "results": {
+        "Tables": {},
+        "Figures": {},
+        "Text": {}
+      }
+    }
+  },
+  "Interpretations": {},
+  "Conclusions": {},
+  "Future Work": {
+    "Suggested Research Questions": {},
+    "Suggested Hypotheses": {}
+  }
+}

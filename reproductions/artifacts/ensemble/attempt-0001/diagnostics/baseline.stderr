@@ -1,0 +1,7 @@
+Warning message:
+In plot.formula(c(0, 1) ~ c(0, 1), ylim = c(1, 16), xlim = c(-0.3,  :
+  the formula 'c(0, 1) ~ c(0, 1)' is treated as 'c(0, 1) ~ 1'
+Error in if (class(X) == "matrix" | class(X) == "data.frame" & any(is.na(X)) ==  : 
+  the condition has length > 1
+Calls: supLearnFit
+Execution halted

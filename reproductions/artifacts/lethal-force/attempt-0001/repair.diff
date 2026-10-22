@@ -1,0 +1,477 @@
+diff --git a/Clean Expanded Categories.R b/Clean Expanded Categories.R
+index fc53c21..88c5633 100644
+--- a/Clean Expanded Categories.R	
++++ b/Clean Expanded Categories.R	
+@@ -1,188 +1,190 @@
+-#*************************************************************************#
+-# Replication File for "Lethal Force in Black and White:                  #
+-# Assessing Racial Disparities in the Circumstances of Police Killings"   # 
+-#                    by Shea Streeter                                     #
+-#*************************************************************************#
+-
+-#######################################
+-# Purpose of File:
+-# Clean column names that have been 
+-# expanded in "Cleaning Variables for JOP Anlysis .R"
+-#######################################
+-
+-
+-#######################################
+-# Inputs: data_to_clean.csv
+-#         variable_codebook_jop.csv
+-######################################
+-
+-#######################################
+-# Output: cleaned_data.csv
+-#######################################
+-
+-library(dplyr)
+-library(stringr)
+-
+-to_clean <- read.csv("data_to_clean.csv", header = F)
+-vars<- read.csv("variable_names.csv") #This contains raw names and analysis names
+-
+-
+-########################################################## 
+-#Some of the variable names were misspelled during the manual arbitration process or 
+-# misprocessed during cleaning
+-##########################################################
+-# Create vector of variables to be deleted
+-
+-to_delete<- c("behavior_Erratic Behavior. Other disruptive behavior. Specify:",
+-                "crime_specify:",
+-                "warrant_crime_specify:",
+-                "non_compliance_",
+-                "police_tactic_rubber bullet)",
+-                "deced_personal_Bisexual or Transgender",
+-                "deced_personal_Lesbian",
+-                "location_jail)",
+-                "shots_fired_Death not by gunshot")
+-
+-
+-#Create dataframe of variables to be merged with correct variable cateogires
+-
+-wrong<- c("behavior_Erratic behavior",
+-"behavior_Suicidal behavior or threats. (e.g. holding gun to own head) (",
+-"non_compliance_‹ñ\tThreaten officer with weapon",
+-"non_compliance_ell at or insult the officer",
+-"non_compliance_Other aggressive or non-compliant behavior. specify:",
+-"non_compliance_Pull out gun",
+-"non_compliance_Shoot&nbsp;first&nbsp;at officer",
+-"police_tactic_Other aggressive or non-compliant behavior. Specify:",
+-"police_tactic_Taser",
+-"deced_personal_Had Children",
+-"deced_occupy_‹ñ\tEducation history. Specify school name(s) and/or fields of study:",
+-"deced_occupy_None of the above",
+-"crime_Burglary/Breaking & Entering",
+-"crime_Motor vehicle theft",
+-"crime_Traffic law violations",
+-"non_compliance_Disobey or ignore police order",
+-"non_compliance_Display or brandish weapon",
+-"reason_contact_Traffic stop",
+-"non_compliance_Brandish or display weapon")
+-
+-right<- c("behavior_erratic",
+-         "behavior_suicide",
+-         "non_compliance_threaten",
+-         "non_compliance_yell",
+-         "non_compliance_other",
+-         "non_compliance_display",
+-         "non_compliance_shoot_first",
+-         "tactic_other",
+-         "tactic_taser",
+-         "personal_had_children",
+-         "educ_history",
+-         "occupy_none",
+-         "crime_burglar",
+-         "crime_theft_auto",
+-         "crime_traffic",
+-         "non_compliance_disobey",
+-         "non_compliance_display",
+-         "reason_traffic_stop",
+-         "non_compliance_display")
+-
+-to_merge<- data.frame(wrong, right)
+-  
+-#####################################################################
+-#Convert other variable names to strings to easily test whether they match
+-
+-column_names<- as.vector(to_clean[1,])
+-column_names <- sapply(column_names, toString)
+-
+-vars<- vars %>% mutate_all(as.character)
+-to_merge<- to_merge %>% mutate_all(as.character)
+-
+-to_clean[1,]<- sapply(to_clean[1,], toString)
+-
+-#Problems with education and threatened misspelled cases
+-
+-# #######ALWAYS CHECK WHICH LOCATION THESE ARE IN##################################
+- to_merge[3,1]<- str_c(to_clean$V91[1]) #fix weird threatened case
+- to_merge[11,1]<- str_c(to_clean$V170[1]) #fix weird education history
+-
+-#Delete extra columns
+-#######   ONLY RUN THIS ONCE ##############
+-for(i in length(to_delete):1){
+-  key_wrong <-  to_delete[i]
+-  wrong_loc<- match(key_wrong, column_names)
+-  if(!is.na(wrong_loc)){
+-    to_clean <- to_clean[,-wrong_loc]
+-  }
+-}
+-
+-column_names<- as.vector(to_clean[1,])
+-column_names <- sapply(column_names, toString)
+-
+-###################################################################
+-#Now change the long raw names of columns to shorter analysis names
+-
+-
+-for(i in 1:nrow(vars)){
+-  var_wrong <- vars$raw_name[i]
+-  var_right <- vars$analysis_name[i]
+-  
+-  #Get vector location with column_names
+-  var_loc<- match(var_wrong, column_names)
+-  
+-  # Based on this location, pick column of data and if NA or empty replace with value in wrong column
+-  if(!is.na(var_loc)){
+-      column_names[var_loc]<- var_right
+-
+-  }
+-}
+-
+-to_clean<- setNames(to_clean,column_names)
+-
+-
+-#merge extra columns and delete incorrect extra columns
+-#This way the values are carried over into the correct column
+-
+-###############################################################
+-
+-
+-for(i in 1:nrow(to_merge)){
+-  key_right <- to_merge$right[i]
+-  key_wrong <- to_merge$wrong[i]
+-  
+-  #Get vector location with column_names
+-  right_loc<- match(key_right, column_names)
+-  wrong_loc<- match(key_wrong, column_names)
+-  
+-  # Based on this location, pick column of data and if NA or empty replace with value in wrong column
+-  
+-  to_clean[,right_loc]<- ifelse(to_clean[, right_loc] == "0" | to_clean[, right_loc] == "", 
+-                                paste(to_clean[, wrong_loc]), 
+-                                paste(to_clean[, right_loc]))
+-  
+-}
+-
+-
+-#Delete old columns that have now been merged
+-#Increment backwards to not cause problems because of deleted 
+-# THE COLUMN NAMES IN to_merge MUST BE IN THE SAME ORDER AS IN COLUMN NAMES OTHERWISE
+-#THE FOR LOOP WILL DELETE THE WRONG VARIABLES
+-#Get location of each of to_merge$wrong variables based on column_names and reorder dataframe
+-
+-to_merge$loc_wrong<- match(to_merge$wrong, column_names)
+-to_merge$loc_right<- match(to_merge$right, column_names)
+-to_merge<- to_merge[order(to_merge$loc_wrong),]
+-
+-
+-column_names<- names(to_clean)
+-
+-
+-for(i in nrow(to_merge):1){
+-  key_wrong <- to_merge$wrong[i]
+-  wrong_loc<- match(key_wrong, column_names)
+-  if(!is.na(wrong_loc)){
+-    to_clean <- to_clean[,-wrong_loc]
+-  }
+-}
+-
+-to_clean<- to_clean[-1,]
+-write.csv(to_clean, "cleaned_data.csv", row.names = F)
++#*************************************************************************#
++# Replication File for "Lethal Force in Black and White:                  #
++# Assessing Racial Disparities in the Circumstances of Police Killings"   # 
++#                    by Shea Streeter                                     #
++#*************************************************************************#
++
++#######################################
++# Purpose of File:
++# Clean column names that have been 
++# expanded in "Cleaning Variables for JOP Anlysis .R"
++#######################################
++
++
++#######################################
++# Inputs: data_to_clean.csv
++#         variable_codebook_jop.csv
++######################################
++
++#######################################
++# Output: cleaned_data.csv
++#######################################
++
++library(dplyr)
++library(stringr)
++
++to_clean <- read.csv("data_to_clean.csv", header = F)
++vars<- read.csv("variable_names.csv") #This contains raw names and analysis names
++
++
++########################################################## 
++#Some of the variable names were misspelled during the manual arbitration process or 
++# misprocessed during cleaning
++##########################################################
++# Create vector of variables to be deleted
++
++to_delete<- c("behavior_Erratic Behavior. Other disruptive behavior. Specify:",
++                "crime_specify:",
++                "warrant_crime_specify:",
++                "non_compliance_",
++                "police_tactic_rubber bullet)",
++                "deced_personal_Bisexual or Transgender",
++                "deced_personal_Lesbian",
++                "location_jail)",
++                "shots_fired_Death not by gunshot")
++
++
++#Create dataframe of variables to be merged with correct variable cateogires
++
++wrong<- c("behavior_Erratic behavior",
++"behavior_Suicidal behavior or threats. (e.g. holding gun to own head) (",
++"non_compliance_‹ñ\tThreaten officer with weapon",
++"non_compliance_ell at or insult the officer",
++"non_compliance_Other aggressive or non-compliant behavior. specify:",
++"non_compliance_Pull out gun",
++"non_compliance_Shoot&nbsp;first&nbsp;at officer",
++"police_tactic_Other aggressive or non-compliant behavior. Specify:",
++"police_tactic_Taser",
++"deced_personal_Had Children",
++"deced_occupy_‹ñ\tEducation history. Specify school name(s) and/or fields of study:",
++"deced_occupy_None of the above",
++"crime_Burglary/Breaking & Entering",
++"crime_Motor vehicle theft",
++"crime_Traffic law violations",
++"non_compliance_Disobey or ignore police order",
++"non_compliance_Display or brandish weapon",
++"reason_contact_Traffic stop",
++"non_compliance_Brandish or display weapon")
++
++right<- c("behavior_erratic",
++         "behavior_suicide",
++         "non_compliance_threaten",
++         "non_compliance_yell",
++         "non_compliance_other",
++         "non_compliance_display",
++         "non_compliance_shoot_first",
++         "tactic_other",
++         "tactic_taser",
++         "personal_had_children",
++         "educ_history",
++         "occupy_none",
++         "crime_burglar",
++         "crime_theft_auto",
++         "crime_traffic",
++         "non_compliance_disobey",
++         "non_compliance_display",
++         "reason_traffic_stop",
++         "non_compliance_display")
++
++to_merge<- data.frame(wrong, right)
++  
++#####################################################################
++#Convert other variable names to strings to easily test whether they match
++
++column_names<- as.vector(to_clean[1,])
++column_names <- sapply(column_names, toString)
++
++vars<- vars %>% mutate_all(as.character)
++to_merge<- to_merge %>% mutate_all(as.character)
++
++to_clean[1,]<- sapply(to_clean[1,], toString)
++
++#Problems with education and threatened misspelled cases
++
++# #######ALWAYS CHECK WHICH LOCATION THESE ARE IN##################################
++ to_merge[3,1] <- grep("^non_compliance_.*Threaten officer with weapon$", column_names, value=TRUE)[grepl("[^ -~]", grep("^non_compliance_.*Threaten officer with weapon$", column_names, value=TRUE))] # Match encoded alternate category by meaning, not column position
++ to_merge[11,1] <- grep("^deced_occupy_.*Education history", column_names, value=TRUE)[grepl("[^ -~]", grep("^deced_occupy_.*Education history", column_names, value=TRUE))] # Match encoded alternate category by meaning
++
++#Delete extra columns
++#######   ONLY RUN THIS ONCE ##############
++for(i in length(to_delete):1){
++  key_wrong <-  to_delete[i]
++  wrong_loc<- match(key_wrong, as.character(to_clean[1,]))
++  if(!is.na(wrong_loc)){
++    to_clean <- to_clean[,-wrong_loc]
++  }
++}
++
++column_names<- as.vector(to_clean[1,])
++column_names <- sapply(column_names, toString)
++
++###################################################################
++#Now change the long raw names of columns to shorter analysis names
++
++
++for(i in 1:nrow(vars)){
++  var_wrong <- vars$raw_name[i]
++  var_right <- vars$analysis_name[i]
++  
++  #Get vector location with column_names
++  var_loc<- match(var_wrong, column_names)
++  
++  # Based on this location, pick column of data and if NA or empty replace with value in wrong column
++  if(!is.na(var_loc)){
++      column_names[var_loc]<- var_right
++
++  }
++}
++
++to_clean<- setNames(to_clean,column_names)
++
++
++#merge extra columns and delete incorrect extra columns
++#This way the values are carried over into the correct column
++
++###############################################################
++
++
++for(i in 1:nrow(to_merge)){
++  key_right <- to_merge$right[i]
++  key_wrong <- to_merge$wrong[i]
++  
++  #Get vector location with column_names
++  right_loc<- match(key_right, column_names)
++  wrong_loc<- match(key_wrong, column_names)
++  
++  # Based on this location, pick column of data and if NA or empty replace with value in wrong column
++  
++  if (is.na(wrong_loc)) stop(paste("Missing merge source:", key_wrong))
++  if (is.na(right_loc)) stop(paste("Missing merge destination:", key_right))
++  to_clean[,right_loc]<- ifelse(to_clean[, right_loc] == "0" | to_clean[, right_loc] == "", 
++                                paste(to_clean[, wrong_loc]), 
++                                paste(to_clean[, right_loc]))
++  
++}
++
++
++#Delete old columns that have now been merged
++#Increment backwards to not cause problems because of deleted 
++# THE COLUMN NAMES IN to_merge MUST BE IN THE SAME ORDER AS IN COLUMN NAMES OTHERWISE
++#THE FOR LOOP WILL DELETE THE WRONG VARIABLES
++#Get location of each of to_merge$wrong variables based on column_names and reorder dataframe
++
++to_merge$loc_wrong<- match(to_merge$wrong, column_names)
++to_merge$loc_right<- match(to_merge$right, column_names)
++to_merge<- to_merge[order(to_merge$loc_wrong),]
++
++
++column_names<- names(to_clean)
++
++
++for(i in nrow(to_merge):1){
++  key_wrong <- to_merge$wrong[i]
++  wrong_loc<- match(key_wrong, names(to_clean))
++  if(!is.na(wrong_loc)){
++    to_clean <- to_clean[,-wrong_loc]
++  }
++}
++
++to_clean<- to_clean[-1,]
++write.csv(to_clean, "cleaned_data.csv", row.names = F)
+diff --git a/reproduce.R b/reproduce.R
+new file mode 100644
+index 0000000..d81f64d
+--- /dev/null
++++ b/reproduce.R
+@@ -0,0 +1,88 @@
++# AI-written orchestration; model blocks copied unchanged from original author script.
++library(dplyr)
++library(randomForest)
++out <- Sys.getenv("REPRO_RESULTS", "/results")
++cat("experiment_1: clean original 700 observations\n")
++source("Cleaning Variables for JOP Analysis.R")
++rf_data <- read.csv("jop_analysis_data.csv", stringsAsFactors=TRUE)
++stopifnot(nrow(rf_data)==700, nlevels(rf_data$race)==2, !anyNA(rf_data))
++file.copy("jop_analysis_data.csv", file.path(out,"jop_analysis_data.csv"))
++cat("experiment_1: original full and category random forests\n")
++# Full Random Forest ------------------------------------------------------
++set.seed(7)
++full_rf <- randomForest(race ~ ., data = rf_data, ntree = 750,  importance = T)  
++
++
++# RF Accuracy
++rf_accuracy <- (1-mean(full_rf$err.rate[,1])) *100
++
++#################################################
++
++# RF Analysis for Each of 5 Variable Categories ---------------------------
++
++
++#Create variable name vectors for 5 categories
++categories<- read.csv("variable_names.csv")
++categories<- categories %>% mutate_all(as.character)
++
++c_vars<- categories[which(categories$variable_category == "Criminal Activity"),]$analysis_name
++i_vars<- categories[which(categories$variable_category == "Individual"),]$analysis_name
++p_vars<- categories[which(categories$variable_category  == "Policing"),]$analysis_name
++s_vars<- categories[which(categories$variable_category  == "Situational"),]$analysis_name
++t_vars<- categories[which(categories$variable_category  == "Threat"),]$analysis_name
++
++#######
++#Divide into 5 data categories
++
++criminal<- rf_data%>% select(one_of(c(c_vars, "race")))
++individual<- rf_data%>% select(one_of(c(i_vars, "race")))
++policing<- rf_data%>% select(one_of(c(p_vars, "race")))
++situational<- rf_data%>% select(one_of(c(s_vars, "race")))
++threat<- rf_data%>% select(one_of(c(t_vars, "race")))
++
++###################
++#Criminal
++
++set.seed(7)
++c_rf<- randomForest(race ~ ., data = criminal, ntree = 500,  importance = T)  
++# Criminal Accuracy
++c_accuracy <- (1-mean(c_rf$err.rate[,1])) *100
++
++##################
++#Individual
++set.seed(7)
++i_rf<- randomForest(race ~ ., data = individual, ntree = 500,  importance = T)  
++# Individual Accuracy
++i_accuracy <- (1-mean(i_rf$err.rate[,1])) *100
++
++##################
++#Policing
++set.seed(7)
++p_rf<- randomForest(race ~ ., data = policing, ntree = 500,  importance = T)  
++#Policing Accuracy
++p_accuracy <- (1-mean(p_rf$err.rate[,1])) *100
++
++##################
++#Situational
++set.seed(7)
++s_rf<- randomForest(race ~ ., data = situational, ntree = 500,  importance = T)  
++# Situational Accuracy
++s_accuracy <- (1-mean(s_rf$err.rate[,1])) *100
++
++##################
++#Threat
++set.seed(7)
++t_rf<- randomForest(race ~ ., data = threat, ntree = 500,  importance = T)  
++# Threat Accuracy
++t_accuracy <- (1-mean(t_rf$err.rate[,1])) *100
++
++#########################################################################
++#########################################################################
++
++
++metrics <- data.frame(model=c("Full", "Criminal", "Individual", "Policing", "Situational", "Threat"), trees=c(750,rep(500,5)), author_mean_accuracy=c(rf_accuracy,c_accuracy,i_accuracy,p_accuracy,s_accuracy,t_accuracy), final_oob_accuracy=100*c(1-tail(full_rf$err.rate[,1],1),1-tail(c_rf$err.rate[,1],1),1-tail(i_rf$err.rate[,1],1),1-tail(p_rf$err.rate[,1],1),1-tail(s_rf$err.rate[,1],1),1-tail(t_rf$err.rate[,1],1)))
++write.csv(metrics,file.path(out,"random_forest_accuracy.csv"),row.names=FALSE)
++write.csv(importance(full_rf),file.path(out,"RF_var_importance.csv"))
++write.csv(table(rf_data$race),file.path(out,"race_counts.csv"),row.names=FALSE)
++sink(file.path(out,"session-info.txt")); sessionInfo(); sink()
++cat("Completed original forests; no target-based adjustment\n");print(metrics)

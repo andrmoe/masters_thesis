@@ -1,0 +1,58 @@
+{
+  "format": 3,
+  "repository": {
+    "url": "https://doi.org/10.7910/DVN/8AKACJ",
+    "commit": "b6f8594322b9aff9d35450294dbd7784d501aef9"
+  },
+  "image": "sha256:6ae8b41e596d6f4f8b18da3e03fa470621be278b1665c84431c8d9e2124fa2c8",
+  "experiments": [
+    "experiment_1"
+  ],
+  "analyses": [
+    "analysis_1"
+  ],
+  "command": [
+    "timeout",
+    "600",
+    "Rscript",
+    "reproduce.R"
+  ],
+  "working_directory": "/work",
+  "exit_code": 0,
+  "outputs": {
+    "stdout": "results/stdout.txt",
+    "stderr": "results/stderr.txt",
+    "files": [
+      "results/assessment.md",
+      "results/session-info.txt",
+      "results/table2-column1.csv",
+      "results/table2-column1.rds",
+      "results/table2-column2.csv",
+      "results/table2-column2.rds",
+      "results/table2-column3-att.csv",
+      "results/table2-column3.rds",
+      "results/table2-column4-att.csv",
+      "results/table2-column4.rds"
+    ]
+  },
+  "unattempted_experiments": [
+    {
+      "experiment": "experiment_2",
+      "reason": "AI-written: Outside the bounded initial Table 2 empirical execution; original source retained."
+    },
+    {
+      "experiment": "experiment_3",
+      "reason": "AI-written: Outside the bounded initial Table 2 empirical execution; original source retained."
+    },
+    {
+      "experiment": "experiment_4",
+      "reason": "AI-written: Outside the bounded initial Table 2 empirical execution; original source retained."
+    }
+  ],
+  "assessments": [
+    {
+      "analysis": "analysis_1",
+      "path": "results/assessment.md"
+    }
+  ]
+}

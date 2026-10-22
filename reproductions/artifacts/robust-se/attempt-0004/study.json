@@ -1,0 +1,97 @@
+{
+  "Meta": {
+    "title": "How Robust Standard Errors Expose Methodological Problems They Do Not Fix, and What to Do About It",
+    "authors": [
+      "Gary King",
+      "Margaret E. Roberts"
+    ],
+    "year": 2015,
+    "venue": "Political Analysis 23(2), 159\u2013179"
+  },
+  "Research Questions": {
+    "research_question_1": {
+      "explicit": true,
+      "value": "AI-written: What can differences between robust and conventional standard errors reveal about model misspecification?",
+      "reason": "Publisher abstract and original author analysis script."
+    }
+  },
+  "Hypotheses": {
+    "hypothesis_1": {
+      "explicit": false,
+      "value": "AI-written: Discrepancies in standard errors can signal misspecification rather than repair the model.",
+      "research_questions": [
+        "research_question_1"
+      ],
+      "reason": "Question expressed as a testable hypothesis; not an execution outcome."
+    }
+  },
+  "Experiments": {
+    "experiment_1": {
+      "research_questions": [
+        "research_question_1"
+      ],
+      "hypotheses": [
+        "hypothesis_1"
+      ],
+      "experiment_description": "AI-written: Dreher\u2013Jensen Poisson specification and information-matrix diagnostics",
+      "strategy": "AI-written: Original formula, original dataset, aliased-column-aware model and sandwich covariance; compute original pre-bootstrap IM diagnostic.",
+      "data": [
+        "Dataverse DOI 10.7910/DVN/26935 original author files"
+      ]
+    },
+    "experiment_2": {
+      "research_questions": [
+        "research_question_1"
+      ],
+      "hypotheses": [
+        "hypothesis_1"
+      ],
+      "experiment_description": "AI-written: Dreher\u2013Jensen full bootstrap, truncated-NB and predictive simulations",
+      "strategy": "AI-written: Original bootstrap counts 99 and 50, original optimization and simulation settings.",
+      "data": [
+        "Dataverse DOI 10.7910/DVN/26935 original author files"
+      ]
+    },
+    "experiment_3": {
+      "research_questions": [
+        "research_question_1"
+      ],
+      "hypotheses": [
+        "hypothesis_1"
+      ],
+      "experiment_description": "AI-written: Neumayer and B\u00fcthe\u2013Milner applications",
+      "strategy": "AI-written: Other original paper applications; one required datafile is access restricted.",
+      "data": [
+        "Dataverse DOI 10.7910/DVN/26935 original author files"
+      ]
+    }
+  },
+  "Analyses": {
+    "analysis_1": {
+      "experiments": [
+        "experiment_1"
+      ],
+      "reason": "AI-written: Observe original Poisson estimates, conventional/robust SEs and initial information-matrix discrepancy; no agreement target.",
+      "metrics": [
+        "Coefficient estimates",
+        "Model and robust standard errors",
+        "Pre-bootstrap information-matrix diagonal discrepancy"
+      ],
+      "statistics": [
+        "Original Poisson model and sandwich covariance"
+      ],
+      "test": "AI-written: Report actual outputs without tuning to published values; no bootstrap p-value or full scientific reproduction claimed.",
+      "results": {
+        "Tables": {},
+        "Figures": {},
+        "Text": {}
+      }
+    }
+  },
+  "Interpretations": {},
+  "Conclusions": {},
+  "Future Work": {
+    "Suggested Research Questions": {},
+    "Suggested Hypotheses": {}
+  }
+}

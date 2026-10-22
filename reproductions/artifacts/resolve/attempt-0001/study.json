@@ -1,0 +1,110 @@
+{
+  "Meta": {
+    "title": "How Do Observers Assess Resolve?",
+    "authors": [
+      "Joshua D. Kertzer",
+      "Jonathan Renshon",
+      "Keren Yarhi-Milo"
+    ],
+    "year": 2021,
+    "venue": "British Journal of Political Science 51(1), 308\u2013330 (online 2019)"
+  },
+  "Research Questions": {
+    "research_question_1": {
+      "explicit": true,
+      "value": "AI-written: How do observers infer state resolve from capabilities, interests, leadership, past behavior and costly signals?",
+      "reason": "Publisher abstract and original author analysis script."
+    }
+  },
+  "Hypotheses": {
+    "hypothesis_1": {
+      "explicit": false,
+      "value": "AI-written: Observers use situational and dispositional attributes to assess resolve.",
+      "research_questions": [
+        "research_question_1"
+      ],
+      "reason": "Question expressed as a testable hypothesis; not an execution outcome."
+    }
+  },
+  "Experiments": {
+    "experiment_1": {
+      "research_questions": [
+        "research_question_1"
+      ],
+      "hypotheses": [
+        "hypothesis_1"
+      ],
+      "experiment_description": "AI-written: Main unweighted conjoint analysis",
+      "strategy": "AI-written: Original author linear probability model, respondent-cluster bootstrap with 1500 replicates on supplied cleaned non-US conjoint profiles.",
+      "data": [
+        "Original Dataverse VSVMY7 replication data"
+      ]
+    },
+    "experiment_2": {
+      "research_questions": [
+        "research_question_1"
+      ],
+      "hypotheses": [
+        "hypothesis_1"
+      ],
+      "experiment_description": "AI-written: Weighted conjoint, interactions and causal mediation",
+      "strategy": "AI-written: Weighted estimates, current-calculus, attribution and democratic-credibility hypothesis models in original script2.",
+      "data": [
+        "Original Dataverse VSVMY7 replication data"
+      ]
+    },
+    "experiment_3": {
+      "research_questions": [
+        "research_question_1"
+      ],
+      "hypotheses": [
+        "hypothesis_1"
+      ],
+      "experiment_description": "AI-written: Generalization to elites",
+      "strategy": "AI-written: Compare mass-sample and elite benchmarks using original script3.",
+      "data": [
+        "Original Dataverse VSVMY7 replication data"
+      ]
+    },
+    "experiment_4": {
+      "research_questions": [
+        "research_question_1"
+      ],
+      "hypotheses": [
+        "hypothesis_1"
+      ],
+      "experiment_description": "AI-written: Appendix robustness and subgroup analyses",
+      "strategy": "AI-written: Original scripts4\u20138 supplementary models, response behavior and demographic heterogeneity.",
+      "data": [
+        "Original Dataverse VSVMY7 replication data"
+      ]
+    }
+  },
+  "Analyses": {
+    "analysis_1": {
+      "experiments": [
+        "experiment_1"
+      ],
+      "reason": "AI-written: Report main-model AMCE bootstrap means and intervals without optimizing numerical agreement.",
+      "metrics": [
+        "AMCE",
+        "95% respondent-cluster bootstrap interval"
+      ],
+      "statistics": [
+        "1500 bootstrap replicates"
+      ],
+      "test": "AI-written: Retain original model/data/replicate count; report values and historical RNG limitations without an agreement threshold.",
+      "results": {
+        "Tables": {},
+        "Figures": {},
+        "Text": {}
+      }
+    }
+  },
+  "Interpretations": {},
+  "Conclusions": {},
+  "Future Work": {
+    "Suggested Research Questions": {},
+    "Suggested Hypotheses": {}
+  }
+}

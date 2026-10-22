@@ -1,0 +1,17 @@
+diff --git a/reproduce.py b/reproduce.py
+new file mode 100644
+index 0000000..9df1e70
+--- /dev/null
++++ b/reproduce.py
+@@ -0,0 +1,11 @@
++# AI-written: execution harness; original algorithm and parameters unchanged.
++import os, pathlib, shutil, subprocess, sys, zipfile
++out = pathlib.Path(os.environ['REPRO_RESULTS'])
++with zipfile.ZipFile('data/yahoo.zip') as archive:
++    archive.extractall('data')
++print('Running original Yahoo offline demonstration on all supplied A1 series', flush=True)
++try:
++    subprocess.run([sys.executable, 'yahoo_demo.py', '--res_dir', str(out/'figures'), '--pattern_dir', str(out/'patterns')], check=True)
++finally:
++    if pathlib.Path('logs/yahoo_demo.log').exists():
++        shutil.copyfile('logs/yahoo_demo.log', out/'yahoo_demo.log')

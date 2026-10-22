@@ -1,0 +1,109 @@
+{
+  "Meta": {
+    "title": "Generalized Synthetic Control Method: Causal Inference with Interactive Fixed Effects Models",
+    "authors": [
+      "Yiqing Xu"
+    ],
+    "year": 2017,
+    "venue": "Political Analysis 25(1), 57\u201376"
+  },
+  "Research Questions": {
+    "research_question_1": {
+      "explicit": true,
+      "value": "AI-written: Can interactive fixed effects recover causal effects in panel data with heterogeneous unobserved confounding?",
+      "reason": "Publisher abstract and original author analysis script."
+    }
+  },
+  "Hypotheses": {
+    "hypothesis_1": {
+      "explicit": false,
+      "value": "AI-written: Generalized synthetic control can estimate election-day-registration effects on turnout using interactive fixed effects.",
+      "research_questions": [
+        "research_question_1"
+      ],
+      "reason": "Question expressed as a testable hypothesis; not an execution outcome."
+    }
+  },
+  "Experiments": {
+    "experiment_1": {
+      "research_questions": [
+        "research_question_1"
+      ],
+      "hypotheses": [
+        "hypothesis_1"
+      ],
+      "experiment_description": "AI-written: Turnout empirical example: Table 2",
+      "strategy": "AI-written: Four original DID and generalized synthetic control Table 2 specifications, original seed 2139 and 2000 bootstrap replicates.",
+      "data": [
+        "Original Dataverse 8AKACJ source and gsynth package datasets"
+      ]
+    },
+    "experiment_2": {
+      "research_questions": [
+        "research_question_1"
+      ],
+      "hypotheses": [
+        "hypothesis_1"
+      ],
+      "experiment_description": "AI-written: Turnout subgroup and graphical analyses",
+      "strategy": "AI-written: Original Table 3 and Figures 2\u20133, A5\u2013A6.",
+      "data": [
+        "Original Dataverse 8AKACJ source and gsynth package datasets"
+      ]
+    },
+    "experiment_3": {
+      "research_questions": [
+        "research_question_1"
+      ],
+      "hypotheses": [
+        "hypothesis_1"
+      ],
+      "experiment_description": "AI-written: Simulated-data worked example",
+      "strategy": "AI-written: Original rep_simdata.R supplied example.",
+      "data": [
+        "Original Dataverse 8AKACJ source and gsynth package datasets"
+      ]
+    },
+    "experiment_4": {
+      "research_questions": [
+        "research_question_1"
+      ],
+      "hypotheses": [
+        "hypothesis_1"
+      ],
+      "experiment_description": "AI-written: Monte Carlo experiments",
+      "strategy": "AI-written: Original sim_*.R sampling, coverage and estimator comparison experiments.",
+      "data": [
+        "Original Dataverse 8AKACJ source and gsynth package datasets"
+      ]
+    }
+  },
+  "Analyses": {
+    "analysis_1": {
+      "experiments": [
+        "experiment_1"
+      ],
+      "reason": "AI-written: Original Table 2 effect and bootstrap uncertainty reporting.",
+      "metrics": [
+        "DID election-day-registration coefficient",
+        "GSC average treatment effect on the treated"
+      ],
+      "statistics": [
+        "2000 bootstrap replicates",
+        "95% bootstrap percentile confidence interval"
+      ],
+      "test": "AI-written: Report observed estimates with the original specifications and bootstrap settings; no agreement threshold or outcome tuning.",
+      "results": {
+        "Tables": {},
+        "Figures": {},
+        "Text": {}
+      }
+    }
+  },
+  "Interpretations": {},
+  "Conclusions": {},
+  "Future Work": {
+    "Suggested Research Questions": {},
+    "Suggested Hypotheses": {}
+  }
+}

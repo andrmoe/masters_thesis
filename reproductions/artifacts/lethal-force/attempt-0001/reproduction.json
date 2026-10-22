@@ -1,0 +1,49 @@
+{
+  "format": 3,
+  "repository": {
+    "url": "https://doi.org/10.7910/DVN/3RNFFH",
+    "commit": "93b266ec74bc817d200a2cd6d25fc056e6ebe570"
+  },
+  "image": "sha256:165600fae632992d380588380997c342687e66aae832f9a15833a1e985868cc6",
+  "experiments": [
+    "experiment_1"
+  ],
+  "analyses": [
+    "analysis_1"
+  ],
+  "command": [
+    "Rscript",
+    "/work/reproduce.R"
+  ],
+  "working_directory": "/work",
+  "exit_code": 0,
+  "outputs": {
+    "stdout": "results/stdout.txt",
+    "stderr": "results/stderr.txt",
+    "files": [
+      "results/RF_var_importance.csv",
+      "results/assessment.md",
+      "results/jop_analysis_data.csv",
+      "results/race_counts.csv",
+      "results/random_forest_accuracy.csv",
+      "results/session-info.txt",
+      "results/upstream-review.md"
+    ]
+  },
+  "unattempted_experiments": [
+    {
+      "experiment": "experiment_2",
+      "reason": "Scoped to original random forests; archived reptree and complete neural-network/LASSO stack not installed or validated."
+    },
+    {
+      "experiment": "experiment_3",
+      "reason": "Full appendix and sensitivity suite not executed; full-forest importance exported as part of scoped forest path."
+    }
+  ],
+  "assessments": [
+    {
+      "analysis": "analysis_1",
+      "path": "results/assessment.md"
+    }
+  ]
+}

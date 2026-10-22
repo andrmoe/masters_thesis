@@ -1,0 +1,19 @@
+diff --git a/DreherJensen.R b/DreherJensen.R
+index 2c1310e..779c14b 100644
+--- a/DreherJensen.R
++++ b/DreherJensen.R
+@@ -1,4 +1,4 @@
+-setwd("~/Dropbox/MyStuff/Replications/Data")
++setwd("/work")
+ library(foreign)
+ library(MASS)
+ library(lmtest)
+@@ -14,7 +14,7 @@ dat <- read.dta("DreherandJensenJLEreplication.dta")
+ #Na omit the data
+ dat <- na.omit(dat[,c("sum","un_per_l", "election_av", "un_el_av", "gdp_r_wk","gg_oecd_l","libor_l", "mg_l","imf_c_liab_l",  "country","year")])
+ 
+-setwd("../Code/ReplicationFolder/Code")
++setwd("/work")
+ source("bootstrapIM.poisson.R")
+ #Replicate the model
+ lm7 <- glm(sum ~ un_per_l*election_av  + gdp_r_wk +gg_oecd_l + libor_l + mg_l + factor(country) + factor(year), data=dat, family="poisson")

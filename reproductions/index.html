@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paper repair observatory</title>
+<meta name="description" content="A sequential study of research-code repair, with original artifacts and execution evidence.">
+<link rel="stylesheet" href="style.css"><script type="module" src="app.js"></script>
+</head>
+<body>
+<header class="masthead"><a href="../" class="brand">Andreas Moe <span>/ Master's thesis</span></a><a href="selection.html">Selection &amp; scope ↗</a></header>
+<main>
+<section class="diff-intro"><div><p class="eyebrow">RESEARCH CODE REPAIR / AI-WRITTEN VIEWER</p><h1>What changed?</h1><p class="explanation">Review the agent’s submitted changes against the original source. Execution evidence and assessments remain available below each diff.</p></div><a href="selection.html">7-paper selection ↗</a></section>
+<p class="campaign-note">7 papers investigated · Result folders are retained locally and omitted from this site’s Git checkout.</p>
+<section class="diff-controls" aria-label="Choose paper and reproduction">
+<label>Find a paper<input type="search" id="search" placeholder="Search title, field, language…"></label>
+<label>Paper<select id="run-select"></select></label>
+<nav class="paper-navigation" aria-label="Paper navigation"><button id="previous-paper" type="button">← Previous paper</button><span id="paper-position"></span><button id="next-paper" type="button">Next paper →</button></nav>
+</section>
+<article id="detail" class="detail" aria-live="polite"><p>Loading paper catalog…</p></article>
+<noscript><p>This viewer needs JavaScript. Read the <a href="PAPERS.md">paper list</a> and <a href="papers.json">raw catalog</a> directly.</p></noscript>
+</main>
+<footer><p><strong>AI-written:</strong> Website, selection rationale, and agent assessments. Original author material and captured program output retain their provenance.</p><a href="papers.json">Catalog JSON ↗</a></footer>
+</body></html>

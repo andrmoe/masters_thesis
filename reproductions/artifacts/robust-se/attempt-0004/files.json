@@ -1,0 +1,77 @@
+[
+  {
+    "path": "Dockerfile",
+    "bytes": 953,
+    "sha256": "d523a81cafafaad57f661b9b486fb609c4f170c5cbaabf10a12d4e216948b52b"
+  },
+  {
+    "path": "README.md",
+    "bytes": 604,
+    "sha256": "a47e530c007ceda88edef307776a6302aec0ae38a26e0119a30c09ec22d4482f"
+  },
+  {
+    "path": "provenance.json",
+    "bytes": 2410,
+    "sha256": "f726ee68141f93a36c86d534235630e93c9bae20dd9270fb1c7220ebbc32dd64"
+  },
+  {
+    "path": "repair.diff",
+    "bytes": 6747,
+    "sha256": "9fcef84db73c18c935192f339d11c1c18edc842656e2bd78b76a99a466beebb0"
+  },
+  {
+    "path": "repair_log.jsonl",
+    "bytes": 1236,
+    "sha256": "3b00f1a3e4aa258d9e5ca34dd891af678bbca718bec23495a14df206c541c9d1"
+  },
+  {
+    "path": "reproduction.json",
+    "bytes": 1249,
+    "sha256": "d33414625ca361a1f23f363a32b232329158472ca41c4eb3e26d687b8144a335"
+  },
+  {
+    "path": "results/assessment.md",
+    "bytes": 2220,
+    "sha256": "c56a44a0ab905fbc086bdb12c9c83830c754c6525da31df3aabd8b9c4631d6d8"
+  },
+  {
+    "path": "results/initial-im-diagnostic.csv",
+    "bytes": 219,
+    "sha256": "52116a8509eb3e716333a8ebe1615c12e90712dc8eeee4755b397bbb5c8567a5"
+  },
+  {
+    "path": "results/measurements.txt",
+    "bytes": 125,
+    "sha256": "8f0a7801bbb3277a40a65f10d0e54b2f684bc14179a0be31d224d3535d1fd801"
+  },
+  {
+    "path": "results/poisson-coefficients.csv",
+    "bytes": 4308,
+    "sha256": "ed4d3a1d4fd9dcc2c94fb327eb6c93deb123501ba4cd71cc2a3ee41d5ecf4a11"
+  },
+  {
+    "path": "results/sessionInfo.txt",
+    "bytes": 873,
+    "sha256": "fd990623d0659d846df3a26571cdad577d57ba3fe6b42f7184927222d71a292f"
+  },
+  {
+    "path": "results/stderr.txt",
+    "bytes": 735,
+    "sha256": "9a7e8c4cb24ffb5fb9cbc606e16044628d4835aca19d829d59590164413f369a"
+  },
+  {
+    "path": "results/stdout.txt",
+    "bytes": 1332,
+    "sha256": "ebca939ccc77decb394b7b537abf2bff2629c17add7064d96f986c584895f668"
+  },
+  {
+    "path": "source.bundle",
+    "bytes": 70406,
+    "sha256": "881a5cf8cba45108f9663e1d412cf0e76a823bda5b700cd78a730e6ca019deed"
+  },
+  {
+    "path": "study.json",
+    "bytes": 3308,
+    "sha256": "fe25679afd79c5add1febc9083a5ecda9645e35ec0606a49e155ae02cee75286"
+  }
+]

@@ -1,0 +1,134 @@
+diff --git a/DreherJensen.R b/DreherJensen.R
+index 2c1310e..779c14b 100644
+--- a/DreherJensen.R
++++ b/DreherJensen.R
+@@ -1,4 +1,4 @@
+-setwd("~/Dropbox/MyStuff/Replications/Data")
++setwd("/work")
+ library(foreign)
+ library(MASS)
+ library(lmtest)
+@@ -14,7 +14,7 @@ dat <- read.dta("DreherandJensenJLEreplication.dta")
+ #Na omit the data
+ dat <- na.omit(dat[,c("sum","un_per_l", "election_av", "un_el_av", "gdp_r_wk","gg_oecd_l","libor_l", "mg_l","imf_c_liab_l",  "country","year")])
+ 
+-setwd("../Code/ReplicationFolder/Code")
++setwd("/work")
+ source("bootstrapIM.poisson.R")
+ #Replicate the model
+ lm7 <- glm(sum ~ un_per_l*election_av  + gdp_r_wk +gg_oecd_l + libor_l + mg_l + factor(country) + factor(year), data=dat, family="poisson")
+diff --git a/bootstrapIM.normal.R b/bootstrapIM.normal.R
+index f4eceb4..e56b8be 100644
+--- a/bootstrapIM.normal.R
++++ b/bootstrapIM.normal.R
+@@ -14,7 +14,7 @@ bootstrapIM.normal <- function(formula, data, B, B2,cluster=NA, time=NA){
+   grad <- apply(cbind(y,model.matrix(lm1)),1,function(x) numericGradient(ll.normal.bsIM, lm1$coefficients, y=x[1], X=x[2:length(x)], sigma=sigma))
+   if(length(cluster)<2 & length(time)<2){
+     meat <- grad%*%t(grad)
+-    bread <- -solve(vcov(lm1))
++    bread <- -solve(vcov(lm1, complete=FALSE))
+     matri <- nrow(X)^(-1/2)*(meat + bread)
+     Dhat <- as.vector(diag(matri))
+     #Verify robust se is calculated correctly
+@@ -22,7 +22,7 @@ bootstrapIM.normal <- function(formula, data, B, B2,cluster=NA, time=NA){
+     #print(paste("Second", diag(vcovHC(lm1, type="HC0"))))
+   }
+   if(length(time)>1){
+-    bread <- -solve(vcov(lm1))
++    bread <- -solve(vcov(lm1, complete=FALSE))
+     bread2 <- t(X)%*%X
+     breadratio <- -bread/bread2
+     plm1 <- plm(formula, data, model="within")
+@@ -45,11 +45,11 @@ bootstrapIM.normal <- function(formula, data, B, B2,cluster=NA, time=NA){
+     grad <- apply(cbind(yB,model.matrix(lm1B)),1,function(x) numericGradient(ll.normal.bsIM, lm1B$coefficients, y=x[1], X=x[2:length(x)], sigma=sigmaB))
+     if(length(cluster)<2 & length(time)<2){
+       meat <- grad%*%t(grad)
+-      bread <- -solve(vcov(lm1B))
++      bread <- -solve(vcov(lm1B, complete=FALSE))
+       D[[i]] <- diag(nrow(X)^(-1/2)*(meat + bread))
+     }
+     if(length(time)>1){
+-      bread <- -solve(vcov(lm1B))
++      bread <- -solve(vcov(lm1B, complete=FALSE))
+       data$yB <- yB
+       bread2 <- t(X)%*%X
+       breadratio <- -bread/bread2
+@@ -70,11 +70,11 @@ bootstrapIM.normal <- function(formula, data, B, B2,cluster=NA, time=NA){
+       grad <- apply(cbind(yB2,model.matrix(lm1B2)),1,function(x) numericGradient(ll.normal.bsIM, lm1B2$coefficients, y=x[1], X=x[2:length(x)], sigma=sigmaB2))
+       if(length(cluster)<2 & length(time)<2){
+         meat <- grad%*%t(grad)
+-        bread <- -solve(vcov(lm1B2))
++        bread <- -solve(vcov(lm1B2, complete=FALSE))
+         DB[[j]] <- diag(nrow(X)^(-1/2)*(meat + bread))
+       }
+       if(length(time)>1){
+-        bread <- -solve(vcov(lm1B2))
++        bread <- -solve(vcov(lm1B2, complete=FALSE))
+         data$yB2 <- yB2
+         bread2 <- t(X)%*%X
+         breadratio <- -bread/bread2
+diff --git a/bootstrapIM.poisson.R b/bootstrapIM.poisson.R
+index 64d55bd..0af624f 100644
+--- a/bootstrapIM.poisson.R
++++ b/bootstrapIM.poisson.R
+@@ -13,7 +13,7 @@ bootstrapIM.poisson <- function(formula, data, B, B2){
+   mu <- exp(X%*%beta)
+   grad <- apply(cbind(y,X),1,function(x) numericGradient(ll.poisson.bsIM, beta, y=x[1], X=x[2:length(x)]))
+   meat <- grad%*%t(grad)
+-  bread <- -solve(vcov(lm1))
++  bread <- -solve(vcov(lm1, complete=FALSE))
+   Dhat <- diag(nrow(X)^(-1/2)*(meat + bread))[1:7]
+   D <- list()
+   Dbar <- rep(0, length(Dhat))
+@@ -24,7 +24,7 @@ bootstrapIM.poisson <- function(formula, data, B, B2){
+     X <- model.matrix(lm1B)[,ok]
+     grad <- apply(cbind(yB,X),1,function(x) numericGradient(ll.poisson.bsIM, lm1B$coefficients[ok], y=x[1], X=x[2:length(x)]))
+     meat <- grad%*%t(grad)
+-    bread <- -solve(vcov(lm1B))
++    bread <- -solve(vcov(lm1B, complete=FALSE))
+     D[[i]] <- diag(nrow(X)^(-1/2)*(meat + bread))[1:7]
+     
+     #Test to make sure robust matrix is being correctly calculated
+@@ -45,7 +45,7 @@ bootstrapIM.poisson <- function(formula, data, B, B2){
+       grad <- apply(cbind(yB2,XB2),1,function(x)
+                     numericGradient(ll.poisson.bsIM, lm1B2$coefficients[ok], y=x[1], X=x[2:length(x)]))
+       meat <- grad%*%t(grad)
+-      bread <- -solve(vcov(lm1B2))
++      bread <- -solve(vcov(lm1B2, complete=FALSE))
+       DB[[j]] <- diag(nrow(X)^(-1/2)*(meat + bread))[1:7]
+       DBbar <- DB[[j]] + DBbar
+     }          
+diff --git a/reproduce.R b/reproduce.R
+new file mode 100644
+index 0000000..e4d6f3c
+--- /dev/null
++++ b/reproduce.R
+@@ -0,0 +1,28 @@
++# AI-written harness: run original Poisson statements and original pre-bootstrap diagnostic.
++# Full original script remains present. No bootstrap counts/seeds are changed.
++options(warn=1)
++dir.create(Sys.getenv("REPRO_RESULTS"),showWarnings=FALSE)
++setwd("/work")
++expr <- parse("DreherJensen.R")
++# Original author statements through seed, excluding only the first full bootstrap invocation.
++for (e in expr) {
++ if (is.call(e) && identical(e[[1]], as.name("<-")) && identical(e[[2]],as.name("IMtest"))) break
++ eval(e, envir=.GlobalEnv)
++}
++# Evaluate original bootstrap function's setup, stopping before its first outer loop.
++# This computes original Dhat without substituting fewer bootstrap draws.
++env <- new.env(parent=.GlobalEnv); env$formula <- form; env$data <- dat; env$B <- 99; env$B2 <- 50
++for (e in as.list(body(bootstrapIM.poisson))[-1]) {
++ if (is.call(e) && identical(e[[1]],as.name("for"))) break
++ eval(e,envir=env)
++}
++model_se <- sqrt(diag(vcov(lm7,complete=FALSE)))
++robust_se <- sqrt(diag(sandwich(lm7)))
++coef <- coef(lm7); keep <- !is.na(coef)
++out <- data.frame(term=names(coef)[keep], estimate=coef[keep], conventional_se=model_se,robust_se=robust_se)
++write.csv(out,file.path(Sys.getenv("REPRO_RESULTS"),"poisson-coefficients.csv"),row.names=FALSE)
++write.csv(data.frame(term=names(env$Dhat),discrepancy=as.numeric(env$Dhat)),file.path(Sys.getenv("REPRO_RESULTS"),"initial-im-diagnostic.csv"),row.names=FALSE)
++writeLines(c(paste("R",getRversion()),paste("Observations",nobs(lm7)),paste("Design columns",ncol(model.matrix(lm7))),paste("Estimable coefficients",sum(keep)),paste("Aliased coefficients",sum(!keep)),paste("Log likelihood",as.numeric(logLik(lm7)))),file.path(Sys.getenv("REPRO_RESULTS"),"measurements.txt"))
++capture.output(sessionInfo(),file=file.path(Sys.getenv("REPRO_RESULTS"),"sessionInfo.txt"))
++cat("Original Poisson specification and pre-bootstrap IM diagnostic completed. Full bootstrap was NOT run.\n")
++print(out[seq_len(min(8,nrow(out))),]); print(env$Dhat)

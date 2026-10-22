@@ -1,0 +1,35 @@
+{
+  "Meta": {
+    "title": "Answering Regular Path Queries through Exemplars",
+    "authors": [],
+    "year": 2022
+  },
+  "Research Questions": {
+    "research_question_1": {
+      "explicit": true,
+      "value": "AI-written: Can exemplar source\u2013destination pairs express regular path queries efficiently?",
+      "reason": "Original author README."
+    }
+  },
+  "Hypotheses": {},
+  "Experiments": {
+    "experiment_1": {
+      "research_questions": [
+        "research_question_1"
+      ],
+      "hypotheses": [],
+      "experiment_description": "AI-written: Author BBFS ground-truth generation and exemplar-query evaluation on supplied labeled graphs.",
+      "strategy": "AI-written: Compile available original BBFS source, then execute supplied workload if implementation and resource requirements permit.",
+      "data": [
+        "Original author Google Drive datasets linked from repository README"
+      ]
+    }
+  },
+  "Analyses": {},
+  "Interpretations": {},
+  "Conclusions": {},
+  "Future Work": {
+    "Suggested Research Questions": {},
+    "Suggested Hypotheses": {}
+  }
+}
